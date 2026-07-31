@@ -5,15 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hi-Tech Edu India</title>
     <style>
-       /* Card ke andar link ko adjust karne ke liye CSS */
-.card-link {
-    text-decoration: none; 
-    color: inherit; 
-    display: block; 
-    height: 100%; /* Taaki user card mein kahin bhi click kare toh page khul jaye */
+      /* Heading ko beech (center) me karne ke liye */
+.section-heading {
+    text-align: center;
+    color: #1a237e;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
-/* Hover effect ko theek karne ke liye (Ab .card par hover seedha lagega) */
+/* Cards ko ek seedhi rekha (horizontal) aur saman duri par rakhne ke liye */
+.card-container {
+    display: flex;
+    justify-content: center; /* Cards ko center me rakhega */
+    align-items: stretch; /* Sabhi cards ki height barabar rakhega */
+    gap: 30px; /* Cards ke beech ki saman duri */
+    flex-wrap: wrap; /* Mobile par apne aap niche shift ho jayenge */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Har ek Card ka apna style */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 300px; /* Har card ki choudai (width) ek jaisi */
+    text-align: left;
+    transition: 0.3s;
+    cursor: pointer; /* Clickable dikhane ke liye Hand icon */
+    border-top: 4px solid #138808; /* Default Green border */
+}
+
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
@@ -267,59 +291,54 @@
     <div id="companies" class="companies-section">
         
         <!-- Part 1: Top Companies -->
-        <h2>Top Manufacturing Companies in India</h2>
-     <!-- L&T Card -->
-<div class="card" onclick="window.location.href='lnt.html';" style="cursor: pointer;">
-    <h3 style="color: #ff9933;">Larsen & Toubro (L&T)</h3>
-    <p>Bharat ke world-class infrastructure, engineering aur construction ko aage badhane wali sabse badi company.</p>
+        <!-- Section 1: Manufacturing Companies -->
+<h2 class="section-heading">Top Manufacturing Companies in India</h2>
+
+<div class="card-container">
+    <!-- L&T Card -->
+    <div class="card" onclick="window.location.href='lnt.html';">
+        <h3 style="color: #ff9933;">Larsen & Toubro (L&T)</h3>
+        <p>Bharat ke world-class infrastructure, engineering aur construction ko aage badhane wali sabse badi company.</p>
+    </div>
+
+    <!-- Tata Motors Card -->
+    <div class="card" onclick="window.location.href='tata.html';">
+        <h3 style="color: #ff9933;">Tata Motors</h3>
+        <p>Commercial aur passenger vehicles me desh ki shaan. Hi-tech automobile manufacturing me sabse aage.</p>
+    </div>
+
+    <!-- Maruti Suzuki Card -->
+    <div class="card" onclick="window.location.href='maruti.html';">
+        <h3 style="color: #ff9933;">Maruti Suzuki</h3>
+        <p>Bharat ki sabse badi car manufacturer, jo modern manufacturing plants aur mass production ke liye jani jati hai.</p>
+    </div>
 </div>
 
-<!-- Tata Motors Card -->
-<div class="card" onclick="window.location.href='tata.html';" style="cursor: pointer;">
-    <h3 style="color: #ff9933;">Tata Motors</h3>
-    <p>Commercial aur passenger vehicles me desh ki shaan. Hi-tech automobile manufacturing me sabse aage.</p>
-</div>
+<!-- Section 2: Corporate Documents & Letters -->
+<h2 class="section-heading">Corporate Documents & Letters</h2>
 
-<!-- Maruti Suzuki Card -->
-<div class="card" onclick="window.location.href='maruti.html';" style="cursor: pointer;">
-    <h3 style="color: #ff9933;">Maruti Suzuki</h3>
-    <p>Bharat ki sabse badi car manufacturer, jo modern manufacturing plants aur mass production ke liye jani jati hai.</p>
-</div>
-</div>    
-</div>
+<div class="card-container">
+    <!-- Offer Letter Card -->
+    <div class="card" onclick="window.location.href='offer-letter.html';" style="border-top-color: #1a237e;">
+        <h3 style="color: #ff9933;">Offer Letter</h3>
+        <p>Company dwara select hone par shuruati prastav (proposal).</p>
+        <p><strong>(Format dekhne ke liye click karein)</strong></p>
+    </div>
 
-       <!-- Part 2: Corporate Documents (Naya Code - Bina target="_blank" ke) -->
-        <h2 style="margin-top: 60px; color: #1a237e;">Corporate Documents & Letters</h2>
-        <div class="company-cards">
-            
-            <!-- Offer Letter Link -->
-            <!-- Dhyan dein: Yahan se target="_blank" hata diya gaya hai -->
-            <a href="offer-letter.html" style="text-decoration: none; color: inherit;">
-                <div class="card" style="border-top-color: #1a237e;"> 
-                    <h3>Offer Letter</h3>
-                    <p>Company dwara select hone par shuruati prastav (proposal). <br><br><strong>(Format dekhne ke liye click karein)</strong></p>
-                </div>
-            </a>
+    <!-- LOI Card -->
+    <div class="card" onclick="window.location.href='loi.html';" style="border-top-color: #ff9933;">
+        <h3 style="color: #ff9933;">Letter of Intent (LOI)</h3>
+        <p>Candidate aur company ke beech kaam shuru karne ka irada.</p>
+        <p><strong>(Format dekhne ke liye click karein)</strong></p>
+    </div>
 
-            <!-- Letter of Intent (LOI) Link -->
-            <!-- Dhyan dein: Yahan se target="_blank" hata diya gaya hai -->
-            <a href="loi.html" style="text-decoration: none; color: inherit;">
-                <div class="card" style="border-top-color: #ff9933;"> 
-                    <h3>Letter of Intent (LOI)</h3>
-                    <p>Candidate aur company ke beech kaam shuru karne ka irada. <br><br><strong>(Format dekhne ke liye click karein)</strong></p>
-                </div>
-            </a>
-
-           <!-- Appointment Letter Link -->
-            <a href="appointment.html" style="text-decoration: none; color: inherit;">
-                <div class="card" style="border-top-color: #138808;"> 
-                    <h3>Appointment Letter</h3>
-                    <p>Final joining ke samay diya jane wala sabse zaroori document. <br><br><strong>(Format dekhne ke liye click karein)</strong></p>
-                </div>
-            </a>
-        </div>
-        </div>
-        </div>
+    <!-- Appointment Letter Card -->
+    <div class="card" onclick="window.location.href='appointment.html';">
+        <h3 style="color: #ff9933;">Appointment Letter</h3>
+        <p>Final joining ke samay diya jane wala sabse zaroori document.</p>
+        <p><strong>(Format dekhne ke liye click karein)</strong></p>
+    </div>
+</div>        </div>
     </div>
 
     <!-- Compact Message Section with Blue & Tiranga Gradient -->
