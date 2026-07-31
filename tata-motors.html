@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tata Motors - Ultra-Luxury Enterprise Portal</title>
+    <!-- Premium Luxury Fonts: Marcellus for Headings, Outfit for Body -->
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           ULTRA-LUXURY MIXED PREMIUM CSS ARCHITECTURE (TATA MOTORS EDITION)
+           ========================================================================== */
+        :root {
+            /* Deep Luxury Mixed Background Colors */
+            --bg-royal-navy: #0B1325;
+            --bg-deep-plum: #1A0F1E;
+            --bg-rich-slate: #11161A;
+            
+            /* Premium Metallic Accents */
+            --gold-champagne: #D4AF37;
+            --gold-muted: #AA8B2E;
+            --platinum: #E5E4E2;
+            
+            /* High-Contrast Luxury Text */
+            --text-title: #FFFFFF;
+            --text-body: #F3F4F6;
+            --text-muted: #9CA3AF;
+            
+            /* Luxury Frosted Glass */
+            --glass-bg: rgba(255, 255, 255, 0.025);
+            --glass-border: rgba(212, 175, 55, 0.15);
+            --glass-hover-border: rgba(212, 175, 55, 0.5);
+            
+            /* Typography */
+            --font-display: 'Marcellus', serif;
+            --font-body: 'Outfit', sans-serif;
+            
+            --transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* The Mixed Luxurious Background Animation */
+        body {
+            font-family: var(--font-body);
+            background: linear-gradient(135deg, var(--bg-royal-navy), var(--bg-deep-plum), var(--bg-rich-slate));
+            background-size: 400% 400%;
+            animation: luxuryGradient 15s ease infinite;
+            color: var(--text-body);
+            line-height: 1.85;
+            font-size: 16px;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        @keyframes luxuryGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* -----------------------------------------------------------
+           AMBIENT LUXURY ORBS (Gold & Sapphire Mix)
+           ----------------------------------------------------------- */
+        .lux-orb-1, .lux-orb-2 {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(140px);
+            z-index: -1;
+            opacity: 0.12;
+            pointer-events: none;
+            animation: floatOrb 12s infinite alternate;
+        }
+
+        .lux-orb-1 {
+            top: -15%;
+            left: -5%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, var(--gold-champagne), transparent);
+        }
+
+        .lux-orb-2 {
+            bottom: -15%;
+            right: -5%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, #2E5BFF, transparent);
+            animation-delay: -5s;
+        }
+
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(30px, 40px) scale(1.1); }
+        }
+
+        /* -----------------------------------------------------------
+           TYPOGRAPHY & HEADINGS (Elegant & Clean)
+           ----------------------------------------------------------- */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            color: var(--text-title);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .title-gradient {
+            background: linear-gradient(to right, #FFFFFF, var(--gold-champagne));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 2.6rem;
+            margin-top: 80px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background: var(--gold-champagne);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--gold-champagne);
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 25px;
+            text-align: justify;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* -----------------------------------------------------------
+           LUXURY HERO SECTION
+           ----------------------------------------------------------- */
+        .hero {
+            padding: 180px 0 120px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 850px;
+            margin: 0 auto;
+            color: var(--platinum);
+            text-align: center;
+            font-family: var(--font-body);
+            font-weight: 300;
+        }
+
+        /* -----------------------------------------------------------
+           PREMIUM FROSTED GLASS CARDS
+           ----------------------------------------------------------- */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            margin-top: 40px;
+        }
+
+        .luxury-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 50px;
+            transition: var(--transition);
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .luxury-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--glass-hover-border);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.08);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        /* -----------------------------------------------------------
+           SUBSIDIARY GRID
+           ----------------------------------------------------------- */
+        .sub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .sub-card {
+            background: linear-gradient(160deg, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.2) 100%);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 40px 35px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sub-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-champagne);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+        }
+
+        .sub-card h4 {
+            font-size: 1.35rem;
+            color: var(--platinum);
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 15px;
+            font-family: var(--font-display);
+        }
+
+        .sub-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+
+        /* -----------------------------------------------------------
+           EXECUTIVE BUTTONS & CTA
+           ----------------------------------------------------------- */
+        .cta-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(0,0,0,0.4));
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 70px;
+            text-align: center;
+            margin: 90px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            height: 1px;
+            background: radial-gradient(circle, var(--gold-champagne), transparent);
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 45px;
+            flex-wrap: wrap;
+        }
+
+        .gold-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold-champagne);
+            background: transparent;
+            border: 1px solid var(--gold-champagne);
+            border-radius: 4px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .gold-btn:hover {
+            color: #000;
+            background: var(--gold-champagne);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* -----------------------------------------------------------
+           PREMIUM FOOTER
+           ----------------------------------------------------------- */
+        footer {
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 60px 0 40px;
+            margin-top: 100px;
+            text-align: center;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3.8rem; }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 25px; }
+            .hero { padding: 140px 0 80px; }
+            .hero h1 { font-size: 2.8rem; }
+            .luxury-card { padding: 35px; }
+            .gold-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ambient Luxury Background Orbs -->
+    <div class="lux-orb-1"></div>
+    <div class="lux-orb-2"></div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="title-gradient">Tata Motors</h1>
+            <p>Pioneering the future of global automotive engineering, commercial transportation, and advanced electric mobility with uncompromising precision since 1945.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Corporate Overview -->
+        <h2>The Apex of Automotive Mastery</h2>
+        <div class="luxury-card" style="margin-bottom: 70px;">
+            <p>Tata Motors Limited stands as a colossal pillar within the $150 billion Tata Group. Evolving from its roots in locomotive manufacturing, the organization has transcended standard automotive methodologies to become a global titan in passenger vehicles, commercial heavy-duty trucks, and elite luxury automobiles through its subsidiary, Jaguar Land Rover. Operating manufacturing hubs across India, the UK, South Korea, and South Africa, Tata Motors commands a dominant presence in shaping the future of global transit.</p>
+            
+            <p>The operational philosophy governing Tata Motors' execution capabilities is rooted in data-driven precision and sustainable innovation. Whether engineering advanced acti.ev (Advanced Connected Tech-Intelligent Electric Vehicle) architectures or constructing autonomous heavy-duty fleets, the conglomerate leverages artificial intelligence, advanced robotics, and strict project management protocols. This ensures that every vehicle, from a compact EV to a massive defense transport, is delivered with absolute mechanical perfection.</p>
+        </div>
+
+        <!-- Technical Excellence -->
+        <h2>Advanced Automobile Engineering</h2>
+        <div class="grid-2">
+            <div class="luxury-card">
+                <h3>Work Study & Assembly Optimization</h3>
+                <p>To eliminate operational bottlenecks across massive automotive assembly lines in facilities like Pune and Sanand, Tata Motors’ industrial engineering departments deploy rigorous Method Study protocols. Every process on the shop floor, from chassis mating to interior fitting, undergoes intense scrutiny. Engineers utilize Motion Analysis to guarantee total Motion Economy, thereby entirely eradicating wasted human and mechanical effort.</p>
+                <p>For highly repetitive manufacturing tasks, such as robotic welding and powertrain assembly, the integration of SIMO charts (Simultaneous Motion Cycle Chart) is standard practice. These charts facilitate granular analysis of operators' synchronous movements against precise time scales. By applying practical levels of measurement—ranging from nominal categorization of paint defects to ratio-level timing of assembly cycles—Tata Motors maintains a pristine Six Sigma quality standard.</p>
+            </div>
+
+            <div class="luxury-card">
+                <h3>Engine Diagnostics & Powertrain Overhaul</h3>
+                <p>Ensuring absolute vehicle reliability demands highly sophisticated engine overhauling procedures. Tata Motors excels in the complete disassembly, microscopic inspection, precision machining, and reassembly of high-capacity commercial engines and advanced passenger powertrains (like the Kryotec and Revotron series) to restore them to stringent original factory tolerances.</p>
+                <p>Furthermore, modern automotive architecture is heavily reliant on integrated electronics. Tata's specialized technicians master complex vehicle electrical systems, high-voltage EV architectures, and advanced telemetry arrays. Crucially, passenger comfort and operator survivability in extreme commercial environments are guaranteed through the meticulous engineering and servicing of high-capacity climate control components (HVAC), ensuring optimal thermal management under intense operational stress.</p>
+            </div>
+        </div>
+
+        <!-- Governance & HR -->
+        <h2>Corporate Governance & Human Capital</h2>
+        <div class="grid-2">
+            <div class="luxury-card">
+                <h3>Statutory Safety Compliance</h3>
+                <p>Tata Motors operates under a strict Zero Harm mandate. Operating massive heavy engineering zones, stamping press lines, and automated paint shops requires absolute adherence to industrial safety regulations. The organization treats compliance with the Factories Act 1948 not merely as a legal boundary, but as the foundational baseline for all its manufacturing operations.</p>
+                <p>This includes the rigorous enforcement of hazardous material protocols, absolute mandates on high-grade Personal Protective Equipment (PPE) around heavy machinery, strict monitoring of ambient industrial heat and noise levels, and scientifically calculated shift rotations. Continuous internal safety audits and emergency protocols ensure the operational matrix remains impervious to accidents.</p>
+            </div>
+
+            <div class="luxury-card">
+                <h3>Strategic Wage Architecture</h3>
+                <p>To attract and retain the world’s leading automotive engineering talent and highly skilled shop-floor technicians, Tata Motors implements an aggressive and transparent wage structure. HR financial analysts continuously cross-reference macroeconomic inflation data against internal compensation scales.</p>
+                <p>By doing so, they maintain a critical, equitable balance between nominal wages (the actual numerical monetary figure paid) and real wages (the true economic purchasing power of that salary in the current market). This strategic calibration ensures that the workforce's standard of living is actively protected, fostering a deep environment of organizational loyalty synonymous with the Tata ethos.</p>
+            </div>
+        </div>
+
+        <!-- Executive Documents CTA -->
+        <div class="cta-box">
+            <h2 style="margin-top: 0; border: none; font-size: 2.2rem; text-align: center;">Corporate Documentation Gateway</h2>
+            <p style="text-align: center; max-width: 750px; margin: 0 auto; color: var(--platinum);">Access the highly standardized, legally vetted templates utilized by Tata Motors' Global Human Resources divisions for executive appointments and technical onboarding protocols.</p>
+            
+            <div class="btn-group">
+                <a href="offer-letter.html" class="gold-btn">Offer Letter</a>
+                <a href="loi.html" class="gold-btn">LOI Document</a>
+                <a href="appointment.html" class="gold-btn">Appointment</a>
+            </div>
+        </div>
+
+        <!-- Subsidiaries Section -->
+        <h2>The Global Automotive Ecosystem</h2>
+        <div class="sub-grid">
+            <div class="sub-card">
+                <h4>Jaguar Land Rover (JLR)</h4>
+                <p>The crown jewel of Tata Motors' global portfolio. Based in the UK, JLR designs, engineers, and manufactures highly coveted luxury sedans, sports cars, and premium all-terrain SUVs globally recognized for their design and technological prowess.</p>
+            </div>
+
+            <div class="sub-card">
+                <h4>Tata Technologies</h4>
+                <p>A global engineering and product development digital services company. They provide advanced mechanical design, software engineering, and digital transformation solutions to the world's leading automotive and aerospace manufacturers.</p>
+            </div>
+
+            <div class="sub-card">
+                <h4>Tata Motors Finance (TMF)</h4>
+                <p>The financial bedrock of the commercial and passenger vehicle sales division, providing highly structured capital solutions, dealer financing, and customer fleet funding to drive expansive market penetration.</p>
+            </div>
+
+            <div class="sub-card">
+                <h4>Tata Passenger Electric Mobility (TPEML)</h4>
+                <p>The vanguard of India's EV revolution. This dedicated subsidiary focuses exclusively on the design, manufacturing, and technological advancement of electric vehicles, driving the transition toward sustainable zero-emission transit.</p>
+            </div>
+
+            <div class="sub-card">
+                <h4>Tata Daewoo Commercial Vehicle</h4>
+                <p>Headquartered in South Korea, this subsidiary is a premier manufacturer of heavy and medium-duty commercial trucks, renowned for their rugged durability, heavy cargo capacity, and advanced diesel engineering.</p>
+            </div>
+
+            <div class="sub-card">
+                <h4>Tata AutoComp Systems</h4>
+                <p>A critical pillar of the supply chain, providing integrated products and services in automotive components. They specialize in interior plastics, advanced battery packs for EVs, and cutting-edge thermal management systems.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Luxury Minimal Footer -->
+    <footer>
+        <div class="container">
+            <h3 style="justify-content: center; margin-bottom: 10px; font-family: var(--font-display); font-size: 1.8rem; color: #fff;">EduInfra India</h3>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto; font-size: 0.95rem; color: var(--text-muted);">Architected with an ultra-premium mixed luxury UI framework for high-end automotive engineering documentation.</p>
+            <p style="text-align: center; margin-top: 35px; font-size: 0.85rem; opacity: 0.4;">&copy; 2026 EduInfra India. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
