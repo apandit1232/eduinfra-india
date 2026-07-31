@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hi-Tech Edu India</title>
     <style>
+        /* Card ko link banane ke liye */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.card-link:hover .card {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
         /* Basic Settings */
         * {
             margin: 0;
@@ -255,22 +265,29 @@
         
         <!-- Part 1: Top Companies -->
         <h2>Top Manufacturing Companies in India</h2>
-        <div class="company-cards">
-            <!-- L&T Box -->
-            <div class="card">
-                <h3>Larsen & Toubro (L&T)</h3>
-                <p>Bharat ke world-class infrastructure, engineering aur construction ko aage badhane wali sabse badi company.</p>
-            </div>
-            <!-- Tata Box -->
-            <div class="card">
-                <h3>Tata Motors</h3>
-                <p>Commercial aur passenger vehicles me desh ki shaan. Hi-tech automobile manufacturing me sabse aage.</p>
-            </div>
-            <!-- Maruti Suzuki Box -->
-            <div class="card">
-                <h3>Maruti Suzuki</h3>
-                <p>Bharat ki sabse badi car manufacturer, jo modern manufacturing plants aur mass production ke liye jani jati hai.</p>
-            </div>
+       <!-- L&T Card -->
+<a href="lnt.html" class="card-link">
+    <div class="card">
+        <h3 style="color: #ff9933;">Larsen & Toubro (L&T)</h3>
+        <p>Bharat ke world-class infrastructure, engineering aur construction ko aage badhane wali sabse badi company.</p>
+    </div>
+</a>
+
+<!-- Tata Motors Card -->
+<a href="tata.html" class="card-link">
+    <div class="card">
+        <h3 style="color: #ff9933;">Tata Motors</h3>
+        <p>Commercial aur passenger vehicles me desh ki shaan. Hi-tech automobile manufacturing me sabse aage.</p>
+    </div>
+</a>
+
+<!-- Maruti Suzuki Card -->
+<a href="maruti.html" class="card-link">
+    <div class="card">
+        <h3 style="color: #ff9933;">Maruti Suzuki</h3>
+        <p>Bharat ki sabse badi car manufacturer, jo modern manufacturing plants aur mass production ke liye jani jati hai.</p>
+    </div>
+</a>
         </div>
 
        <!-- Part 2: Corporate Documents (Naya Code - Bina target="_blank" ke) -->
