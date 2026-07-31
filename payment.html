@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Payment - EduInfra India</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f4; text-align: center; padding: 30px; margin: 0; }
+        .payment-box { background: white; max-width: 450px; margin: 0 auto; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 5px solid #1a237e; }
+        h2 { color: #1a237e; margin-top: 0; }
+        .price { font-size: 24px; color: #e31837; font-weight: bold; margin-bottom: 20px; }
+        img { width: 100%; max-width: 220px; border: 2px solid #eee; border-radius: 10px; padding: 10px; margin-bottom: 20px; }
+        
+        /* Input Box Design */
+        .input-group { margin: 20px 0; }
+        .input-group input { width: 80%; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; text-align: center; }
+        
+        /* Buttons Design */
+        .btn { display: inline-block; margin: 10px 5px; padding: 12px 25px; color: white; border: none; text-decoration: none; font-weight: bold; font-size: 15px; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+        .verify-btn { background-color: #ff9933; width: 85%; }
+        .verify-btn:hover { background-color: #e68a00; }
+        
+        .download-btn { background-color: #138808; }
+        .download-btn:hover { background-color: #0f6e06; }
+        
+        .receipt-btn { background-color: #1a237e; }
+        .receipt-btn:hover { background-color: #111756; }
+        
+        .note { font-size: 13px; color: #666; margin-top: 15px; }
+
+        /* Hidden section initially */
+        #success-section { display: none; margin-top: 20px; padding-top: 20px; border-top: 2px dashed #ddd; }
+    </style>
+</head>
+<body>
+
+    <div class="payment-box">
+        <h2>Unlock Premium Document</h2>
+        <div class="price">Scan & Pay ₹49</div>
+        
+        <!-- Aapka QR Code Image -->
+        <img src="scanner.png" alt="Google Pay Scanner">
+        
+        <p style="color: #333; font-weight: bold;">Step 1: Scan and Pay ₹49</p>
+        <p style="font-size: 14px; color: #555;">Payment complete hone ke baad, apna 12-digit UPI Reference/UTR number niche daalein.</p>
+
+        <!-- Verification Section -->
+        <div id="verify-section" class="input-group">
+            <input type="number" id="upi-ref" placeholder="Enter 12-digit UPI Ref Number" oninput="this.value = this.value.slice(0,12)">
+            <br><br>
+            <button class="btn verify-btn" onclick="verifyPayment()">Verify Payment</button>
+        </div>
+
+        <!-- Success & Download Section (Jo pehle chhipa rahega) -->
+        <div id="success-section">
+            <h3 style="color: #138808;">✅ Payment Verified Successfully!</h3>
+            
+            <!-- Document Download Button -->
+            <a href="tata_offer_letter.pdf" target="_blank" class="btn download-btn">⬇ Download Document</a>
+            
+            <!-- Receipt Download Button -->
+            <button class="btn receipt-btn" onclick="generateReceipt()">🧾 Download Receipt</button>
+        </div>
+        
+    </div>
+
+    <!-- JavaScript For Logic -->
+    <script>
+        function verifyPayment() {
+            let upiInput = document.getElementById("upi-ref").value;
+            
+            // Check agar user ne kam se kam 12 digit dale hain
+            if(upiInput.length === 12) {
+                // Agar input sahi hai, toh verify section chhupao aur success section dikhao
+                document.getElementById("verify-section").style.display = "none";
+                document.getElementById("success-section").style.display = "block";
+                alert("Payment Verified! Aap ab document aur receipt download kar sakte hain.");
+            } else {
+                alert("Kripaya sahi 12-digit UPI Reference Number daalein.");
+            }
+        }
+
+        function generateReceipt() {
+            let upiInput = document.getElementById("upi-ref").value;
+            let date = new Date().toLocaleDateString('en-IN');
+            
+            // Ek naya tab khol kar usme receipt ka design banana
+            let receiptWindow = window.open('', '_blank');
+            receiptWindow.document.write(`
+                <html>
+                <head>
+                    <title>Payment Receipt</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; padding: 40px; }
+                        .receipt-box { border: 2px solid #333; padding: 30px; max-width: 500px; margin: 0 auto; }
+                        h2 { text-align: center; color: #1a237e; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+                        .details { margin-top: 20px; line-height: 1.8; font-size: 16px; }
+                        .footer { text-align: center; margin-top: 30px; font-size: 12px; color: #666; }
+                    </style>
+                </head>
+                <body>
+                    <div class="receipt-box">
+                        <h2>EduInfra India - Payment Receipt</h2>
+                        <div class="details">
+                            <p><strong>Item:</strong> Tata Motors Offer Letter (Format)</p>
+                            <p><strong>Amount Paid:</strong> ₹49.00</p>
+                            <p><strong>Date:</strong> ${date}</p>
+                            <p><strong>UPI Reference No:</strong> ${upiInput}</p>
+                            <p><strong>Payment Status:</strong> <span style="color: green; font-weight: bold;">SUCCESS</span></p>
+                        </div>
+                        <div class="footer">
+                            <p>This is a computer-generated receipt.</p>
+                        </div>
+                    </div>
+                    <script>
+                        // Page load hote hi PDF print/save ka option khul jayega
+                        window.print();
+                    <\/script>
+                </body>
+                </html>
+            `);
+            receiptWindow.document.close();
+        }
+    </script>
+</body>
+</html>

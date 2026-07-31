@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Letter - EduInfra India</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            background-color: #1a237e; /* Dark Blue */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .document-container {
+            max-width: 900px; 
+            margin: 40px auto; /* Margin adjust kiya gaya hai */
+            background: white;
+            padding: 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-top: 5px solid #ff9933; /* Saffron Top Border */
+            border-bottom: 5px solid #138808; /* Green Bottom Border */
+            text-align: center;
+        }
+
+        .document-container h2 {
+            color: #1a237e;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+        }
+
+        /* Square Logo Buttons Grid Design */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px; 
+            justify-items: center;
+        }
+
+        .square-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 220px;
+            height: 220px;
+            background-color: #ffffff;
+            border: 2px solid #e0e0e0;
+            border-bottom: 5px solid #1a237e; /* Blue bottom line */
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .square-btn:hover {
+            transform: translateY(-8px); 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            border-bottom-color: #138808; /* Appointment ke liye hover par green line */
+        }
+
+        .square-btn img {
+            max-width: 140px;
+            max-height: 90px;
+            object-fit: contain; 
+            margin-bottom: 20px;
+        }
+
+        .square-btn span {
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+        }
+        
+        .square-btn .sub-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 8px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>⚙️ EduInfra India - Corporate Documents</h1>
+    </div>
+
+    <div class="document-container">
+        <h2>Select Company to View Appointment Letter</h2>
+        
+        <!-- Grid for Square Logo Buttons -->
+        <div class="logo-grid">
+            
+            <!-- Tata Motors Box -->
+            <a href="tata_appointment.pdf" target="_blank" class="square-btn">
+                <img src="tata.png" alt="Tata Motors">
+                <span>Tata Motors</span>
+                <div class="sub-text">View Appointment Format</div>
+            </a>
+            
+            <!-- L&T Box -->
+            <a href="lnt_appointment.pdf" target="_blank" class="square-btn" style="border-bottom-color: #ff9933;">
+                <img src="lnt.png" alt="L&T">
+                <span>Larsen & Toubro</span>
+                <div class="sub-text">View Appointment Format</div>
+            </a>
+            
+            <!-- Mahindra Box -->
+            <a href="mahindra_appointment.pdf" target="_blank" class="square-btn" style="border-bottom-color: #e31837;">
+                <img src="mahindra.png" alt="Mahindra & Mahindra">
+                <span>Mahindra</span>
+                <div class="sub-text">View Appointment Format</div>
+            </a>
+            
+            <!-- Maruti Suzuki Box -->
+            <a href="maruti_appointment.pdf" target="_blank" class="square-btn" style="border-bottom-color: #138808;">
+                <img src="maruti.png" alt="Maruti Suzuki">
+                <span>Maruti Suzuki</span>
+                <div class="sub-text">View Appointment Format</div>
+            </a>
+
+        </div>
+        
+    </div>
+
+</body>
+</html>

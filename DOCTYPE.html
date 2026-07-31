@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi-Tech Edu India</title>
+    <style>
+        /* Basic Settings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Navigation Bar (Tabs) */
+        nav {
+            background-color: #1a237e; /* Dark Blue */
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav h1 {
+            color: white;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #ff9933; /* Saffron color on hover */
+        }
+
+        /* Main Screen (Hero Section) */
+        .hero {
+            /* Yeh background image hi-tech manufacturing ki ek sample image hai */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h2 {
+            font-size: 45px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Tiranga Border Design Below Hero */
+        .tiranga-line {
+            display: flex;
+            height: 10px;
+            width: 100%;
+        }
+        .saffron { background-color: #ff9933; flex: 1; }
+        .white { background-color: #ffffff; flex: 1; }
+        .green { background-color: #138808; flex: 1; }
+        
+        /* Information Section */
+        .info-section {
+            padding: 50px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+/* Companies Section Styling */
+        .companies-section {
+            padding: 50px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .companies-section h2 {
+            font-size: 32px;
+            color: #1a237e; /* Dark Blue */
+            margin-bottom: 30px;
+        }
+
+        .company-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap; 
+        }
+
+        .card {
+            background-color: #f9f9f9;
+            border-top: 4px solid #138808; /* Tirange ka hara rang border ke liye */
+            padding: 25px;
+            width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px); /* Mouse le jane par box thoda upar uthega */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .card h3 {
+            color: #ff9933; /* Tirange ka kesariya (Saffron) rang */
+            margin-bottom: 10px;
+        }
+        
+        .card p {
+            color: #444;
+            line-height: 1.5;
+        }
+/* About Me Section Styling */
+        .about-section {
+            padding: 50px;
+            background-color: #f4f4f4;
+            text-align: left;
+        }
+
+        .about-section h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #1a237e;
+            margin-bottom: 30px;
+        }
+
+        .resume-container {
+            max-width: 900px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-left: 6px solid #138808; /* Tirange ka hara rang */
+        }
+
+        .resume-container h3 {
+            color: #ff9933; /* Tirange ka kesariya rang */
+            margin-top: 25px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 5px;
+            font-size: 22px;
+        }
+
+        .resume-container .profile-header {
+            color: #1a237e;
+            font-size: 28px;
+            border: none;
+            margin-top: 0;
+        }
+
+        .resume-container p, .resume-container ul {
+            color: #444;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .resume-container ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .resume-container li {
+            margin-bottom: 8px;
+        }
+/* Popup (Modal) Design */
+        .modal-overlay {
+            display: none; /* Normal time par chhipa rahega */
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.7); /* Peeche ka hissa thoda dark ho jayega */
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 700px;
+            text-align: left;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px; right: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            color: red;
+            cursor: pointer;
+        }
+
+        .card {
+            cursor: pointer; /* Box par mouse le jane par hand icon aayega */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Tabs -->
+    <nav>
+        <h1>⚙️ EduInfra India</h1>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#companies">Companies</a></li>
+            <li><a href="#about-me">About Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Screen (Hero) -->
+    <div id="home" class="hero">
+        <h2>World-Class Infrastructure 🇮🇳</h2>
+        <p>Bharat ki hi-tech manufacturing, industrial engineering aur modern infrastructure ko samajhne aur seekhne ka sabse behtareen platform. Aaiye future ki technology ke saath kadam milayein.</p>
+    </div>
+
+    <!-- Tiranga Divider -->
+    <div class="tiranga-line">
+        <div class="saffron"></div>
+        <div class="white"></div>
+        <div class="green"></div>
+    </div>
+
+    <!-- Companies & Corporate Documents Section -->
+    <div id="companies" class="companies-section">
+        
+        <!-- Part 1: Top Companies -->
+        <h2>Top Manufacturing Companies in India</h2>
+        <div class="company-cards">
+            <!-- L&T Box -->
+            <div class="card">
+                <h3>Larsen & Toubro (L&T)</h3>
+                <p>Bharat ke world-class infrastructure, engineering aur construction ko aage badhane wali sabse badi company.</p>
+            </div>
+            <!-- Tata Box -->
+            <div class="card">
+                <h3>Tata Motors</h3>
+                <p>Commercial aur passenger vehicles me desh ki shaan. Hi-tech automobile manufacturing me sabse aage.</p>
+            </div>
+            <!-- Maruti Suzuki Box -->
+            <div class="card">
+                <h3>Maruti Suzuki</h3>
+                <p>Bharat ki sabse badi car manufacturer, jo modern manufacturing plants aur mass production ke liye jani jati hai.</p>
+            </div>
+        </div>
+
+       <!-- Part 2: Corporate Documents (Naya Code - Bina target="_blank" ke) -->
+        <h2 style="margin-top: 60px; color: #1a237e;">Corporate Documents & Letters</h2>
+        <div class="company-cards">
+            
+            <!-- Offer Letter Link -->
+            <!-- Dhyan dein: Yahan se target="_blank" hata diya gaya hai -->
+            <a href="offer-letter.html" style="text-decoration: none; color: inherit;">
+                <div class="card" style="border-top-color: #1a237e;"> 
+                    <h3>Offer Letter</h3>
+                    <p>Company dwara select hone par shuruati prastav (proposal). <br><br><strong>(Format dekhne ke liye click karein)</strong></p>
+                </div>
+            </a>
+
+            <!-- Letter of Intent (LOI) Link -->
+            <!-- Dhyan dein: Yahan se target="_blank" hata diya gaya hai -->
+            <a href="loi.html" style="text-decoration: none; color: inherit;">
+                <div class="card" style="border-top-color: #ff9933;"> 
+                    <h3>Letter of Intent (LOI)</h3>
+                    <p>Candidate aur company ke beech kaam shuru karne ka irada. <br><br><strong>(Format dekhne ke liye click karein)</strong></p>
+                </div>
+            </a>
+
+           <!-- Appointment Letter Link -->
+            <a href="appointment.html" style="text-decoration: none; color: inherit;">
+                <div class="card" style="border-top-color: #138808;"> 
+                    <h3>Appointment Letter</h3>
+                    <p>Final joining ke samay diya jane wala sabse zaroori document. <br><br><strong>(Format dekhne ke liye click karein)</strong></p>
+                </div>
+            </a>
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Compact Message Section with Blue & Tiranga Gradient -->
+    <div id="about-me" style="background: linear-gradient(135deg, #1a237e 65%, #ff9933 85%, #ffffff 92%, #138808 100%); color: #ffffff; padding: 40px 5%; width: 100%; box-sizing: border-box;">
+        
+        <div style="max-width: 1000px; text-align: left;">
+            <h2 style="color: #ffb366; font-size: 28px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">
+                A Message from the Creator
+            </h2>
+            
+            <div style="font-size: 16px; line-height: 1.7; font-weight: 300;">
+                
+                <p style="margin-bottom: 12px; font-size: 20px; font-weight: bold;">
+                    Hello, I am Anish Kumar Shukla.
+                </p>
+                
+                <p style="margin-bottom: 12px; color: #f0f0f0;">
+                    As a Mechanical Engineering student at Govt. Polytechnic Ghaziabad, my vision is to drive India's hi-tech manufacturing and world-class infrastructure forward. Using CAD tools and practical innovations like my 'Footstep Power Generation' project, I strive to design sustainable and energy-efficient solutions for the future.
+                </p>
+
+                <p style="margin-top: 20px; font-size: 18px; font-weight: bold; color: #ffffff;">
+                    Let's innovate and build a modern India together. 
+                    <span style="color: #1a237e; background-color: #ffffff; padding: 4px 12px; border-radius: 4px; display: inline-block; margin-left: 10px;">Jai Hind! 🇮🇳</span>
+                </p>
+                
+            </div>
+        </div>
+    </div>
+<!-- Hidden Popups for Documents -->
+    
+    <!-- 1. Offer Letter Popup -->
+    <div id="popup-offer" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closePopup('popup-offer')">&times;</span>
+            <h2 style="color: #1a237e; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">Offer Letter Format</h2>
+            <p><strong>Date:</strong> 30 July 2026</p>
+            <p><strong>Dear Candidate,</strong></p>
+            <p style="line-height: 1.6; margin-top: 15px;">We are pleased to offer you the position of <strong>Trainee Engineer</strong> at our organization. Your starting salary will be as discussed during the interview.</p>
+            <p style="line-height: 1.6; margin-top: 15px;">Please note that this is an initial offer. A detailed Appointment Letter containing all rules, regulations, and exact benefits will be provided to you on your date of joining. Kindly sign and return a copy of this letter as a token of your acceptance.</p>
+            <p style="margin-top: 25px;"><strong>Best Regards,</strong><br>HR Department</p>
+        </div>
+    </div>
+
+    <!-- 2. Letter of Intent Popup -->
+    <div id="popup-loi" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closePopup('popup-loi')">&times;</span>
+            <h2 style="color: #ff9933; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">Letter of Intent (LOI) Format</h2>
+            <p><strong>Dear Candidate,</strong></p>
+            <p style="line-height: 1.6; margin-top: 15px;">Following your recent interview, we are writing to express our intent to hire you. We were very impressed with your background in Mechanical Engineering and your CAD skills.</p>
+            <p style="line-height: 1.6; margin-top: 15px;">This Letter of Intent is subject to the successful completion of your background verification and final management approval. Once cleared, a formal Offer Letter will be issued to you.</p>
+        </div>
+    </div>
+
+    <!-- 3. Appointment Letter Popup -->
+    <div id="popup-appointment" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closePopup('popup-appointment')">&times;</span>
+            <h2 style="color: #138808; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">Appointment Letter Format</h2>
+            <p><strong>Welcome to the Company!</strong></p>
+            <p style="line-height: 1.6; margin-top: 15px;">We are delighted to appoint you to the role of Trainee Engineer. Below are the key terms of your employment:</p>
+            <ul style="line-height: 1.6; margin-top: 15px; margin-left: 20px;">
+                <li><strong>Working Hours:</strong> 9:00 AM to 6:00 PM (Monday to Saturday).</li>
+                <li><strong>Probation Period:</strong> You will be on probation for 6 months from the date of joining.</li>
+                <li><strong>Notice Period:</strong> Either party can terminate this agreement by giving a 30-day notice.</li>
+                <li><strong>Confidentiality:</strong> You are required to maintain strict confidentiality regarding company operations and manufacturing processes.</li>
+            </ul>
+            <p style="line-height: 1.6; margin-top: 15px;">Please sign the duplicate copy of this letter confirming your agreement to these terms.</p>
+        </div>
+    </div>
+
+    <!-- JavaScript (Click logic) -->
+    <script>
+        function showPopup(id) {
+            document.getElementById(id).style.display = 'flex';
+        }
+
+        function closePopup(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>

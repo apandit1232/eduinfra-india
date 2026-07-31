@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offer Letters - EduInfra India</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            background-color: #1a237e; /* Dark Blue */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .document-container {
+            max-width: 900px; /* Thoda bada kiya hai taaki boxes fit aayein */
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-top: 5px solid #ff9933; /* Saffron Top Border */
+            border-bottom: 5px solid #138808; /* Green Bottom Border */
+            text-align: center;
+        }
+
+        .document-container h2 {
+            color: #1a237e;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+        }
+
+        /* Square Logo Buttons Grid Design */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px; /* Boxes ke beech ki jagah */
+            justify-items: center;
+        }
+
+        .square-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 220px;
+            height: 220px;
+            background-color: #ffffff;
+            border: 2px solid #e0e0e0;
+            border-bottom: 5px solid #1a237e; /* Blue bottom line */
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .square-btn:hover {
+            transform: translateY(-8px); /* Hover par box thoda upar uthega */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            border-bottom-color: #ff9933; /* Hover par line saffron ho jayegi */
+        }
+
+        .square-btn img {
+            max-width: 140px;
+            max-height: 90px;
+            object-fit: contain; /* Logo ko bina stretch kiye fit karega */
+            margin-bottom: 20px;
+        }
+
+        .square-btn span {
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+        }
+        
+        .square-btn .sub-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 8px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>⚙️ EduInfra India - Corporate Documents</h1>
+    </div>
+
+    <div class="document-container">
+        <h2>Select Company to View Offer Letter</h2>
+        
+        <!-- Grid for Square Logo Buttons -->
+        <div class="logo-grid">
+            
+           <!-- Tata Motors Box (LOCKED) -->
+            <a href="#" onclick="unlockDocument(event, 'tata_offer_letter.pdf')" class="square-btn" style="position: relative;">
+                <!-- Locked Badge (Optional) -->
+                <div style="position: absolute; top: 10px; right: 10px; background: #e31837; color: white; font-size: 11px; padding: 3px 8px; border-radius: 10px; font-weight: bold;">🔒 Premium</div>
+                
+                <img src="tata.png" alt="Tata Motors">
+                <span>Tata Motors</span>
+                <div class="sub-text" style="color: #e31837; font-weight: bold;">Pay ₹49 to Unlock</div>
+            </a>
+            
+            <!-- L&T Box -->
+            <a href="lnt_offer.pdf" target="_blank" class="square-btn" style="border-bottom-color: #ff9933;">
+                <!-- Niche 'src' me L&T ke logo ki image ka naam likhein -->
+                <img src="lnt-logo.png" alt="L&T">
+                <span>Larsen & Toubro</span>
+                <div class="sub-text">View Format</div>
+            </a>
+            
+            <!-- Maruti Suzuki Box -->
+            <a href="maruti_offer.pdf" target="_blank" class="square-btn" style="border-bottom-color: #138808;">
+                <!-- Niche 'src' me Maruti ke logo ki image ka naam likhein -->
+                <img src="maruti-logo.png" alt="Maruti Suzuki">
+                <span>Maruti Suzuki</span>
+                <div class="sub-text">View Format</div>
+            </a>
+
+            <!-- General Format Box (Tiranga Style) -->
+            <a href="Mahindra_offer.pdf" target="_blank" class="square-btn">
+                <!-- Agar isme logo nahi lagana, to koi document icon laga sakte hain -->
+                <img src="Mahindra-logo.png" alt="General Format">
+                <span>Mahindra</span>
+                <div class="sub-text">Standard Template</div>
+            </a>
+
+        </div>
+        
+    </div>
+<!-- Payment Lock JavaScript -->
+    <script>
+        function unlockDocument(event, documentName) {
+            event.preventDefault(); 
+
+            let confirmPayment = confirm("🔒 This Document is Locked!\n\nTata Motors ka Offer Letter dekhne ke liye minimum ₹49 ki fee lagti hai.\n\nKya aap payment page par aage badhna chahte hain?");
+
+            if (confirmPayment) {
+                // Yahan Razorpay ki jagah apne naye payment page ka naam daal diya hai
+                window.location.href = "payment.html";
+            }
+        }
+    </script>
+</body>
+</html>
