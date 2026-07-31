@@ -5,65 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hi-Tech Edu India</title>
     <style>
-    /* -----------------------------------------------------------
-       FLOATING BALLOONS & TWINKLING STARS BACKGROUND EFFECT
-       ----------------------------------------------------------- */
-    
-    /* Background container jo poore page ke peeche chalega */
-    .animation-bg-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        z-index: -999; /* Sabhi content ke peeche rahega */
-        pointer-events: none; /* Mouse click ko block nahi karega */
-        background: transparent;
-    }
-
-    /* Twinkling Stars Styling */
-    .star {
-        position: absolute;
-        background: #ffffff;
-        border-radius: 50%;
-        animation: twinkleStar var(--duration) ease-in-out infinite alternate;
-        opacity: 0.3;
-    }
-
-    @keyframes twinkleStar {
-        0% { transform: scale(0.8); opacity: 0.2; }
-        100% { transform: scale(1.4); opacity: 0.9; box-shadow: 0 0 8px #D4AF37; }
-    }
-
-    /* Floating Bubbles / Balloons Styling */
-    .balloon {
-        position: absolute;
-        bottom: -100px;
-        background: radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.8), rgba(26, 35, 126, 0.4));
-        border-radius: 50%;
-        box-shadow: inset -5px -5px 15px rgba(0, 0, 0, 0.4), 0 0 15px rgba(212, 175, 55, 0.3);
-        animation: floatUpBalloon var(--speed) linear infinite;
-        opacity: 0.6;
-    }
-
-    @keyframes floatUpBalloon {
-        0% {
-            transform: translateY(0) translateX(0) scale(1);
-            opacity: 0;
-        }
-        20% {
-            opacity: 0.7;
-        }
-        80% {
-            opacity: 0.7;
-        }
-        100% {
-            transform: translateY(-110vh) translateX(var(--random-x)) scale(1.2);
-            opacity: 0;
-        }
-    }
-        
     /* Heading ko beech (center) me karne ke liye */
       .section-heading {
           text-align: center;
@@ -483,52 +424,6 @@
         function closePopup(id) {
             document.getElementById(id).style.display = 'none';
         }
-    // -----------------------------------------------------------
-    // JavaScript to generate dynamic Stars and Floating Balloons
-    // -----------------------------------------------------------
-    document.addEventListener("DOMContentLoaded", function () {
-        const container = document.getElementById("bgAnimationContainer");
-
-        // 1. Generate Twinkling Stars (Count: 40)
-        for (let i = 0; i < 40; i++) {
-            let star = document.createElement("div");
-            star.classList.add("star");
-            
-            let size = Math.random() * 3 + 1; // Chote bade stars
-            star.style.width = `${size}px`;
-            star.style.height = `${size}px`;
-            star.style.top = `${Math.random() * 100}%`;
-            star.style.left = `${Math.random() * 100}%`;
-            
-            let duration = Math.random() * 3 + 2; // Twinkling speed
-            star.style.setProperty('--duration', `${duration}s`);
-            
-            container.appendChild(star);
-        }
-
-        // 2. Generate Floating Bubbles / Balloons (Count: 25)
-        for (let j = 0; j < 25; j++) {
-            let balloon = document.createElement("div");
-            balloon.classList.add("balloon");
-
-            let size = Math.random() * 30 + 10; // Size 10px se 40px tak (chote bade)
-            balloon.style.width = `${size}px`;
-            balloon.style.height = `${size}px`;
-
-            balloon.style.left = `${Math.random() * 100}%`; // Random horizontal position
-
-            let speed = Math.random() * 8 + 6; // Uper jane ki speed (6s se 14s)
-            balloon.style.setProperty('--speed', `${speed}s`);
-
-            let randomX = (Math.random() - 0.5) * 200 + 'px'; // Thoda left-right hilte hue udega
-            balloon.style.setProperty('--random-x', randomX);
-
-            // Har balloon ka delay alag hoga taaki ek sath na nikle
-            balloon.style.animationDelay = `${Math.random() * 8}s`;
-
-            container.appendChild(balloon);
-        }
-    });
     </script>
 
 </body>
