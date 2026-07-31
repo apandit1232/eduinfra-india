@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Companies Directory - EduInfra India</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #1a237e; /* Dark Blue */
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav h1 {
+            color: white;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #ff9933;
+        }
+
+        /* Tiranga Line */
+        .tiranga-line {
+            display: flex;
+            height: 8px;
+            width: 100%;
+        }
+        .saffron { background-color: #ff9933; flex: 1; }
+        .white { background-color: #ffffff; flex: 1; }
+        .green { background-color: #138808; flex: 1; }
+
+        /* Companies Page Styling */
+        body {
+            background-color: #f4f7f6;
+        }
+
+        .page-header {
+            text-align: center;
+            padding: 50px 20px 20px;
+        }
+
+        .page-header h2 {
+            font-size: 36px;
+            color: #1a237e;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            color: #555;
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Grid for Cards */
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            width: 320px;
+            text-align: left;
+            transition: 0.3s;
+            cursor: pointer;
+            border-top: 5px solid #138808;
+            text-decoration: none;
+            display: block;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            color: #ff9933;
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #444;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        .action-text {
+            color: #1a237e;
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 14px;
+            display: inline-block;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Tabs -->
+    <nav>
+        <h1>⚙️ EduInfra India</h1>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="companies.html" style="color: #ff9933;">Companies</a></li>
+            <li><a href="index.html#about-me">About Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Tiranga Divider -->
+    <div class="tiranga-line">
+        <div class="saffron"></div>
+        <div class="white"></div>
+        <div class="green"></div>
+    </div>
+
+    <!-- Companies Directory -->
+    <div class="page-header">
+        <h2>Corporate Directory</h2>
+        <p>Explore detailed technical documents, executive offers, and organizational structures of India's top manufacturing giants.</p>
+    </div>
+
+    <div class="card-container">
+        
+        <!-- 1. L&T (Linked to existing page) -->
+        <a href="lnt.html" class="card">
+            <h3>Larsen & Toubro</h3>
+            <p>Bharat ke world-class infrastructure, heavy engineering aur construction ko aage badhane wali sabse badi company.</p>
+            <div class="action-text">Explore Documents ➔</div>
+        </a>
+
+        <!-- 2. Tata Motors (Linked to existing page) -->
+        <a href="tata-motors.html" class="card">
+            <h3>Tata Motors</h3>
+            <p>Commercial aur passenger vehicles me desh ki shaan. Hi-tech automobile manufacturing me sabse aage.</p>
+            <div class="action-text">Explore Documents ➔</div>
+        </a>
+
+        <!-- 3. Maruti Suzuki (Linked to existing page) -->
+        <a href="maruti-suzuki.html" class="card">
+            <h3>Maruti Suzuki</h3>
+            <p>Bharat ki sabse badi car manufacturer, jo modern lean manufacturing aur scale ke liye jani jati hai.</p>
+            <div class="action-text">Explore Documents ➔</div>
+        </a>
+
+        <!-- 4. Mahindra & Mahindra -->
+        <a href="mahindra.html" class="card">
+            <h3>Mahindra & Mahindra</h3>
+            <p>Tractors, utility vehicles aur farm equipment me global level par Bharat ka sabse bada naam.</p>
+            <div class="action-text">Explore Documents ➔</div>
+        </a>
+
+        <!-- 5. Reliance Industries -->
+        <a href="reliance.html" class="card">
+            <h3>Reliance Industries</h3>
+            <p>Petrochemicals aur massive scale manufacturing me Bharat ki sabse badi aur modern conglomerate.</p>
+            <div class="action-text">Explore Documents ➔</div>
+        </a>
+
+        <!-- 6. Bajaj Auto -->
+        <a href="bajaj.html" class="card">
+            <h3>Bajaj Auto</h3>
+            <p>Duniya ki sabse badi two-wheeler aur three-wheeler manufacturing companies me se ek.</p>
+            <div class="action-text">Explore Documents ➔</div>
+        </a>
+
+        <!-- 7. Hero MotoCorp -->
+        <a href="hero.html" class="card">
+            <h3>Hero MotoCorp</h3>
+            <p>Two-wheelers ki duniya me sabse bada naam, jo apne high-volume production aur supply chain ke liye famous hai.</p>
+            <div class="action-text">Explore Documents ➔</div>
+        </a>
+
+    </div>
+
+</body>
+</html>
