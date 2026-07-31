@@ -1,4 +1,4 @@
-<!DOCTYPE.html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
@@ -6,260 +6,264 @@
     <title>Hi-Tech Edu India</title>
     <style>
       /* Heading ko beech (center) me karne ke liye */
-.section-heading {
-    text-align: center;
-    color: #1a237e;
-    margin-top: 50px;
-    margin-bottom: 20px;
-}
+      .section-heading {
+          text-align: center;
+          color: #1a237e;
+          margin-top: 50px;
+          margin-bottom: 20px;
+      }
 
-/* Cards ko ek seedhi rekha (horizontal) aur saman duri par rakhne ke liye */
-.card-container {
-    display: flex;
-    justify-content: center; /* Cards ko center me rakhega */
-    align-items: stretch; /* Sabhi cards ki height barabar rakhega */
-    gap: 30px; /* Cards ke beech ki saman duri */
-    flex-wrap: wrap; /* Mobile par apne aap niche shift ho jayenge */
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px;
-}
+      /* Cards ko ek seedhi rekha (horizontal) aur saman duri par rakhne ke liye */
+      .card-container {
+          display: flex;
+          justify-content: center; /* Cards ko center me rakhega */
+          align-items: stretch; /* Sabhi cards ki height barabar rakhega */
+          gap: 30px; /* Cards ke beech ki saman duri */
+          flex-wrap: wrap; /* Mobile par apne aap niche shift ho jayenge */
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 20px;
+      }
 
-/* Har ek Card ka apna style */
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 300px; /* Har card ki choudai (width) ek jaisi */
-    text-align: left;
-    transition: 0.3s;
-    cursor: pointer; /* Clickable dikhane ke liye Hand icon */
-    border-top: 4px solid #138808; /* Default Green border */
-}
+      /* Har ek Card ka apna style */
+      .card {
+          background: white;
+          padding: 25px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          width: 300px; /* Har card ki choudai (width) ek jaisi */
+          text-align: left;
+          transition: 0.3s;
+          cursor: pointer; /* Clickable dikhane ke liye Hand icon */
+          border-top: 4px solid #138808; /* Default Green border */
+      }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-        /* Basic Settings */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+      .card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      }
+      
+      /* Basic Settings */
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
 
-        /* Navigation Bar (Tabs) */
-        nav {
-            background-color: #1a237e; /* Dark Blue */
-            padding: 15px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      /* Navigation Bar (Tabs) */
+      nav {
+          background-color: #1a237e; /* Dark Blue */
+          padding: 15px 50px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
         
-        nav h1 {
-            color: white;
-            font-size: 24px;
-        }
+      nav h1 {
+          color: white;
+          font-size: 24px;
+      }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
+      .nav-links {
+          list-style: none;
+          display: flex;
+          gap: 30px;
+      }
 
-        .nav-links li a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+      .nav-links li a {
+          color: white;
+          text-decoration: none;
+          font-size: 18px;
+          font-weight: bold;
+          transition: 0.3s;
+      }
 
-        .nav-links li a:hover {
-            color: #ff9933; /* Saffron color on hover */
-        }
+      .nav-links li a:hover {
+          color: #ff9933; /* Saffron color on hover */
+      }
 
-        /* Main Screen (Hero Section) */
-        .hero {
-            /* Yeh background image hi-tech manufacturing ki ek sample image hai */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 20px;
-        }
+      /* Main Screen (Hero Section) */
+      .hero {
+          /* Yeh background image hi-tech manufacturing ki ek sample image hai */
+          background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80');
+          background-size: cover;
+          background-position: center;
+          height: 85vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          color: white;
+          padding: 20px;
+      }
 
-        .hero h2 {
-            font-size: 45px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+      .hero h2 {
+          font-size: 45px;
+          margin-bottom: 20px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+      }
 
-        .hero p {
-            font-size: 20px;
-            max-width: 800px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
+      .hero p {
+          font-size: 20px;
+          max-width: 800px;
+          line-height: 1.6;
+          margin-bottom: 30px;
+      }
 
-        /* Tiranga Border Design Below Hero */
-        .tiranga-line {
-            display: flex;
-            height: 10px;
-            width: 100%;
-        }
-        .saffron { background-color: #ff9933; flex: 1; }
-        .white { background-color: #ffffff; flex: 1; }
-        .green { background-color: #138808; flex: 1; }
+      /* Tiranga Border Design Below Hero */
+      .tiranga-line {
+          display: flex;
+          height: 10px;
+          width: 100%;
+      }
+      .saffron { background-color: #ff9933; flex: 1; }
+      .white { background-color: #ffffff; flex: 1; }
+      .green { background-color: #138808; flex: 1; }
         
-        /* Information Section */
-        .info-section {
-            padding: 50px;
-            text-align: center;
-            background-color: #f4f4f4;
-        }
-/* Companies Section Styling */
-        .companies-section {
-            padding: 50px;
-            background-color: #ffffff;
-            text-align: center;
-        }
+      /* Information Section */
+      .info-section {
+          padding: 50px;
+          text-align: center;
+          background-color: #f4f4f4;
+      }
+      
+      /* Companies Section Styling */
+      .companies-section {
+          padding: 50px;
+          background-color: #ffffff;
+          text-align: center;
+      }
 
-        .companies-section h2 {
-            font-size: 32px;
-            color: #1a237e; /* Dark Blue */
-            margin-bottom: 30px;
-        }
+      .companies-section h2 {
+          font-size: 32px;
+          color: #1a237e; /* Dark Blue */
+          margin-bottom: 30px;
+      }
 
-        .company-cards {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap; 
-        }
+      .company-cards {
+          display: flex;
+          justify-content: center;
+          gap: 30px;
+          flex-wrap: wrap; 
+      }
 
-        .card {
-            background-color: #f9f9f9;
-            border-top: 4px solid #138808; /* Tirange ka hara rang border ke liye */
-            padding: 25px;
-            width: 300px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
+      .card {
+          background-color: #f9f9f9;
+          border-top: 4px solid #138808; /* Tirange ka hara rang border ke liye */
+          padding: 25px;
+          width: 300px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          transition: 0.3s;
+      }
 
-        .card:hover {
-            transform: translateY(-10px); /* Mouse le jane par box thoda upar uthega */
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
+      .card:hover {
+          transform: translateY(-10px); /* Mouse le jane par box thoda upar uthega */
+          box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      }
 
-        .card h3 {
-            color: #ff9933; /* Tirange ka kesariya (Saffron) rang */
-            margin-bottom: 10px;
-        }
+      .card h3 {
+          color: #ff9933; /* Tirange ka kesariya (Saffron) rang */
+          margin-bottom: 10px;
+      }
         
-        .card p {
-            color: #444;
-            line-height: 1.5;
-        }
-/* About Me Section Styling */
-        .about-section {
-            padding: 50px;
-            background-color: #f4f4f4;
-            text-align: left;
-        }
+      .card p {
+          color: #444;
+          line-height: 1.5;
+      }
+      
+      /* About Me Section Styling */
+      .about-section {
+          padding: 50px;
+          background-color: #f4f4f4;
+          text-align: left;
+      }
 
-        .about-section h2 {
-            text-align: center;
-            font-size: 32px;
-            color: #1a237e;
-            margin-bottom: 30px;
-        }
+      .about-section h2 {
+          text-align: center;
+          font-size: 32px;
+          color: #1a237e;
+          margin-bottom: 30px;
+      }
 
-        .resume-container {
-            max-width: 900px;
-            margin: auto;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-left: 6px solid #138808; /* Tirange ka hara rang */
-        }
+      .resume-container {
+          max-width: 900px;
+          margin: auto;
+          background: #ffffff;
+          padding: 30px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          border-left: 6px solid #138808; /* Tirange ka hara rang */
+      }
 
-        .resume-container h3 {
-            color: #ff9933; /* Tirange ka kesariya rang */
-            margin-top: 25px;
-            margin-bottom: 10px;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 5px;
-            font-size: 22px;
-        }
+      .resume-container h3 {
+          color: #ff9933; /* Tirange ka kesariya rang */
+          margin-top: 25px;
+          margin-bottom: 10px;
+          border-bottom: 2px solid #f0f0f0;
+          padding-bottom: 5px;
+          font-size: 22px;
+      }
 
-        .resume-container .profile-header {
-            color: #1a237e;
-            font-size: 28px;
-            border: none;
-            margin-top: 0;
-        }
+      .resume-container .profile-header {
+          color: #1a237e;
+          font-size: 28px;
+          border: none;
+          margin-top: 0;
+      }
 
-        .resume-container p, .resume-container ul {
-            color: #444;
-            line-height: 1.6;
-            font-size: 16px;
-        }
+      .resume-container p, .resume-container ul {
+          color: #444;
+          line-height: 1.6;
+          font-size: 16px;
+      }
 
-        .resume-container ul {
-            padding-left: 20px;
-            margin-bottom: 15px;
-        }
+      .resume-container ul {
+          padding-left: 20px;
+          margin-bottom: 15px;
+      }
         
-        .resume-container li {
-            margin-bottom: 8px;
-        }
-/* Popup (Modal) Design */
-        .modal-overlay {
-            display: none; /* Normal time par chhipa rahega */
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.7); /* Peeche ka hissa thoda dark ho jayega */
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
+      .resume-container li {
+          margin-bottom: 8px;
+      }
+      
+      /* Popup (Modal) Design */
+      .modal-overlay {
+          display: none; /* Normal time par chhipa rahega */
+          position: fixed;
+          top: 0; left: 0; width: 100%; height: 100%;
+          background-color: rgba(0,0,0,0.7); /* Peeche ka hissa thoda dark ho jayega */
+          z-index: 1000;
+          justify-content: center;
+          align-items: center;
+      }
 
-        .modal-content {
-            background-color: white;
-            padding: 40px;
-            border-radius: 8px;
-            width: 80%;
-            max-width: 700px;
-            text-align: left;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
+      .modal-content {
+          background-color: white;
+          padding: 40px;
+          border-radius: 8px;
+          width: 80%;
+          max-width: 700px;
+          text-align: left;
+          position: relative;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      }
 
-        .close-btn {
-            position: absolute;
-            top: 15px; right: 25px;
-            font-size: 28px;
-            font-weight: bold;
-            color: red;
-            cursor: pointer;
-        }
+      .close-btn {
+          position: absolute;
+          top: 15px; right: 25px;
+          font-size: 28px;
+          font-weight: bold;
+          color: red;
+          cursor: pointer;
+      }
 
-        .card {
-            cursor: pointer; /* Box par mouse le jane par hand icon aayega */
-        }
+      .card {
+          cursor: pointer; /* Box par mouse le jane par hand icon aayega */
+      }
     </style>
 </head>
 <body>
@@ -292,53 +296,53 @@
         
         <!-- Part 1: Top Companies -->
         <!-- Section 1: Manufacturing Companies -->
-<h2 class="section-heading">Top Manufacturing Companies in India</h2>
+        <h2 class="section-heading">Top Manufacturing Companies in India</h2>
 
-<div class="card-container">
-    <!-- L&T Card -->
-    <div class="card" onclick="window.location.href='lnt.html';">
-        <h3 style="color: #ff9933;">Larsen & Toubro (L&T)</h3>
-        <p>Bharat ke world-class infrastructure, engineering aur construction ko aage badhane wali sabse badi company.</p>
-    </div>
+        <div class="card-container">
+            <!-- L&T Card -->
+            <div class="card" onclick="window.location.href='lnt.html';">
+                <h3 style="color: #ff9933;">Larsen & Toubro (L&T)</h3>
+                <p>Bharat ke world-class infrastructure, engineering aur construction ko aage badhane wali sabse badi company.</p>
+            </div>
 
-    <!-- Tata Motors Card -->
-    <div class="card" onclick="window.location.href='tata.html';">
-        <h3 style="color: #ff9933;">Tata Motors</h3>
-        <p>Commercial aur passenger vehicles me desh ki shaan. Hi-tech automobile manufacturing me sabse aage.</p>
-    </div>
+            <!-- Tata Motors Card (Link Updated here) -->
+            <div class="card" onclick="window.location.href='tata-motors.html';">
+                <h3 style="color: #ff9933;">Tata Motors</h3>
+                <p>Commercial aur passenger vehicles me desh ki shaan. Hi-tech automobile manufacturing me sabse aage.</p>
+            </div>
 
-    <!-- Maruti Suzuki Card -->
-    <div class="card" onclick="window.location.href='maruti.html';">
-        <h3 style="color: #ff9933;">Maruti Suzuki</h3>
-        <p>Bharat ki sabse badi car manufacturer, jo modern manufacturing plants aur mass production ke liye jani jati hai.</p>
-    </div>
-</div>
+            <!-- Maruti Suzuki Card (Link Updated here) -->
+            <div class="card" onclick="window.location.href='maruti-suzuki.html';">
+                <h3 style="color: #ff9933;">Maruti Suzuki</h3>
+                <p>Bharat ki sabse badi car manufacturer, jo modern manufacturing plants aur mass production ke liye jani jati hai.</p>
+            </div>
+        </div>
 
-<!-- Section 2: Corporate Documents & Letters -->
-<h2 class="section-heading">Corporate Documents & Letters</h2>
+        <!-- Section 2: Corporate Documents & Letters -->
+        <h2 class="section-heading">Corporate Documents & Letters</h2>
 
-<div class="card-container">
-    <!-- Offer Letter Card -->
-    <div class="card" onclick="window.location.href='offer-letter.html';" style="border-top-color: #1a237e;">
-        <h3 style="color: #ff9933;">Offer Letter</h3>
-        <p>Company dwara select hone par shuruati prastav (proposal).</p>
-        <p><strong>(Format dekhne ke liye click karein)</strong></p>
-    </div>
+        <div class="card-container">
+            <!-- Offer Letter Card -->
+            <div class="card" onclick="window.location.href='offer-letter.html';" style="border-top-color: #1a237e;">
+                <h3 style="color: #ff9933;">Offer Letter</h3>
+                <p>Company dwara select hone par shuruati prastav (proposal).</p>
+                <p><strong>(Format dekhne ke liye click karein)</strong></p>
+            </div>
 
-    <!-- LOI Card -->
-    <div class="card" onclick="window.location.href='loi.html';" style="border-top-color: #ff9933;">
-        <h3 style="color: #ff9933;">Letter of Intent (LOI)</h3>
-        <p>Candidate aur company ke beech kaam shuru karne ka irada.</p>
-        <p><strong>(Format dekhne ke liye click karein)</strong></p>
-    </div>
+            <!-- LOI Card -->
+            <div class="card" onclick="window.location.href='loi.html';" style="border-top-color: #ff9933;">
+                <h3 style="color: #ff9933;">Letter of Intent (LOI)</h3>
+                <p>Candidate aur company ke beech kaam shuru karne ka irada.</p>
+                <p><strong>(Format dekhne ke liye click karein)</strong></p>
+            </div>
 
-    <!-- Appointment Letter Card -->
-    <div class="card" onclick="window.location.href='appointment.html';">
-        <h3 style="color: #ff9933;">Appointment Letter</h3>
-        <p>Final joining ke samay diya jane wala sabse zaroori document.</p>
-        <p><strong>(Format dekhne ke liye click karein)</strong></p>
-    </div>
-</div>        </div>
+            <!-- Appointment Letter Card -->
+            <div class="card" onclick="window.location.href='appointment.html';">
+                <h3 style="color: #ff9933;">Appointment Letter</h3>
+                <p>Final joining ke samay diya jane wala sabse zaroori document.</p>
+                <p><strong>(Format dekhne ke liye click karein)</strong></p>
+            </div>
+        </div>
     </div>
 
     <!-- Compact Message Section with Blue & Tiranga Gradient -->
@@ -367,7 +371,8 @@
             </div>
         </div>
     </div>
-<!-- Hidden Popups for Documents -->
+    
+    <!-- Hidden Popups for Documents -->
     
     <!-- 1. Offer Letter Popup -->
     <div id="popup-offer" class="modal-overlay">
