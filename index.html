@@ -5,327 +5,224 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hi-Tech Edu India</title>
     <style>
-    /* -----------------------------------------------------------
-       FLOATING BALLOONS & TWINKLING STARS BACKGROUND EFFECT
-       ----------------------------------------------------------- */
-    
-    /* Background container jo poore page ke peeche chalega */
-    .animation-bg-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        z-index: -999; /* Sabhi content ke peeche rahega */
-        pointer-events: none; /* Mouse click ko block nahi karega */
-        background: transparent;
-    }
-
-    /* Twinkling Stars Styling */
-    .star {
-        position: absolute;
-        background: #ffffff;
-        border-radius: 50%;
-        animation: twinkleStar var(--duration) ease-in-out infinite alternate;
-        opacity: 0.3;
-    }
-
-    @keyframes twinkleStar {
-        0% { transform: scale(0.8); opacity: 0.2; }
-        100% { transform: scale(1.4); opacity: 0.9; box-shadow: 0 0 8px #D4AF37; }
-    }
-
-    /* Floating Bubbles / Balloons Styling */
-    .balloon {
-        position: absolute;
-        bottom: -100px;
-        background: radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.8), rgba(26, 35, 126, 0.4));
-        border-radius: 50%;
-        box-shadow: inset -5px -5px 15px rgba(0, 0, 0, 0.4), 0 0 15px rgba(212, 175, 55, 0.3);
-        animation: floatUpBalloon var(--speed) linear infinite;
-        opacity: 0.6;
-    }
-
-    @keyframes floatUpBalloon {
-        0% {
-            transform: translateY(0) translateX(0) scale(1);
-            opacity: 0;
+        /* -----------------------------------------------------------
+           FLOATING BALLOONS & TWINKLING STARS BACKGROUND EFFECT
+           ----------------------------------------------------------- */
+        .animation-bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -999;
+            pointer-events: none;
+            background: transparent;
         }
-        20% {
-            opacity: 0.7;
+
+        .star {
+            position: absolute;
+            background: #ffffff;
+            border-radius: 50%;
+            animation: twinkleStar var(--duration) ease-in-out infinite alternate;
+            opacity: 0.3;
         }
-        80% {
-            opacity: 0.7;
+
+        @keyframes twinkleStar {
+            0% { transform: scale(0.8); opacity: 0.2; }
+            100% { transform: scale(1.4); opacity: 0.9; box-shadow: 0 0 8px #D4AF37; }
         }
-        100% {
-            transform: translateY(-110vh) translateX(var(--random-x)) scale(1.2);
-            opacity: 0;
+
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            background: radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.8), rgba(26, 35, 126, 0.4));
+            border-radius: 50%;
+            box-shadow: inset -5px -5px 15px rgba(0, 0, 0, 0.4), 0 0 15px rgba(212, 175, 55, 0.3);
+            animation: floatUpBalloon var(--speed) linear infinite;
+            opacity: 0.6;
         }
-    }
+
+        @keyframes floatUpBalloon {
+            0% {
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 0;
+            }
+            20% { opacity: 0.7; }
+            80% { opacity: 0.7; }
+            100% {
+                transform: translateY(-110vh) translateX(var(--random-x)) scale(1.2);
+                opacity: 0;
+            }
+        }
         
-    /* Heading ko beech (center) me karne ke liye */
-      .section-heading {
-          text-align: center;
-          color: #1a237e;
-          margin-top: 50px;
-          margin-bottom: 20px;
-      }
+        .section-heading {
+            text-align: center;
+            color: #1a237e;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
 
-      /* Cards ko ek seedhi rekha (horizontal) aur saman duri par rakhne ke liye */
-      .card-container {
-          display: flex;
-          justify-content: center; /* Cards ko center me rakhega */
-          align-items: stretch; /* Sabhi cards ki height barabar rakhega */
-          gap: 30px; /* Cards ke beech ki saman duri */
-          flex-wrap: wrap; /* Mobile par apne aap niche shift ho jayenge */
-          max-width: 1100px;
-          margin: 0 auto;
-          padding: 20px;
-      }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-      /* Har ek Card ka apna style */
-      .card {
-          background: white;
-          padding: 25px;
-          border-radius: 8px;
-          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-          width: 300px; /* Har card ki choudai (width) ek jaisi */
-          text-align: left;
-          transition: 0.3s;
-          cursor: pointer; /* Clickable dikhane ke liye Hand icon */
-          border-top: 4px solid #138808; /* Default Green border */
-      }
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: left;
+            transition: 0.3s;
+            cursor: pointer;
+            border-top: 4px solid #138808;
+        }
 
-      .card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      }
-      
-      /* Basic Settings */
-      * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      /* Navigation Bar (Tabs) */
-      nav {
-          background-color: #1a237e; /* Dark Blue */
-          padding: 15px 50px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-      }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
         
-      nav h1 {
-          color: white;
-          font-size: 24px;
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-      .nav-links {
-          list-style: none;
-          display: flex;
-          gap: 30px;
-      }
-
-      .nav-links li a {
-          color: white;
-          text-decoration: none;
-          font-size: 18px;
-          font-weight: bold;
-          transition: 0.3s;
-      }
-
-      .nav-links li a:hover {
-          color: #ff9933; /* Saffron color on hover */
-      }
-
-      /* Main Screen (Hero Section) */
-      .hero {
-          /* Yeh background image hi-tech manufacturing ki ek sample image hai */
-          background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80');
-          background-size: cover;
-          background-position: center;
-          height: 85vh;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          color: white;
-          padding: 20px;
-      }
-
-      .hero h2 {
-          font-size: 45px;
-          margin-bottom: 20px;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-      }
-
-      .hero p {
-          font-size: 20px;
-          max-width: 800px;
-          line-height: 1.6;
-          margin-bottom: 30px;
-      }
-
-      /* Tiranga Border Design Below Hero */
-      .tiranga-line {
-          display: flex;
-          height: 10px;
-          width: 100%;
-      }
-      .saffron { background-color: #ff9933; flex: 1; }
-      .white { background-color: #ffffff; flex: 1; }
-      .green { background-color: #138808; flex: 1; }
+        nav {
+            background-color: #1a237e;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
         
-      /* Information Section */
-      .info-section {
-          padding: 50px;
-          text-align: center;
-          background-color: #f4f4f4;
-      }
-      
-      /* Companies Section Styling */
-      .companies-section {
-          padding: 50px;
-          background-color: #ffffff;
-          text-align: center;
-      }
+        nav h1 {
+            color: white;
+            font-size: 24px;
+        }
 
-      .companies-section h2 {
-          font-size: 32px;
-          color: #1a237e; /* Dark Blue */
-          margin-bottom: 30px;
-      }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
 
-      .company-cards {
-          display: flex;
-          justify-content: center;
-          gap: 30px;
-          flex-wrap: wrap; 
-      }
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-      .card {
-          background-color: #f9f9f9;
-          border-top: 4px solid #138808; /* Tirange ka hara rang border ke liye */
-          padding: 25px;
-          width: 300px;
-          border-radius: 8px;
-          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-          transition: 0.3s;
-      }
+        .nav-links li a:hover {
+            color: #ff9933;
+        }
 
-      .card:hover {
-          transform: translateY(-10px); /* Mouse le jane par box thoda upar uthega */
-          box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      }
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
 
-      .card h3 {
-          color: #ff9933; /* Tirange ka kesariya (Saffron) rang */
-          margin-bottom: 10px;
-      }
+        .hero h2 {
+            font-size: 45px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .tiranga-line {
+            display: flex;
+            height: 10px;
+            width: 100%;
+        }
+        .saffron { background-color: #ff9933; flex: 1; }
+        .white { background-color: #ffffff; flex: 1; }
+        .green { background-color: #138808; flex: 1; }
         
-      .card p {
-          color: #444;
-          line-height: 1.5;
-      }
-      
-      /* About Me Section Styling */
-      .about-section {
-          padding: 50px;
-          background-color: #f4f4f4;
-          text-align: left;
-      }
+        .companies-section {
+            padding: 50px;
+            background-color: #ffffff;
+            text-align: center;
+        }
 
-      .about-section h2 {
-          text-align: center;
-          font-size: 32px;
-          color: #1a237e;
-          margin-bottom: 30px;
-      }
+        .companies-section h2 {
+            font-size: 32px;
+            color: #1a237e;
+            margin-bottom: 30px;
+        }
 
-      .resume-container {
-          max-width: 900px;
-          margin: auto;
-          background: #ffffff;
-          padding: 30px;
-          border-radius: 8px;
-          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-          border-left: 6px solid #138808; /* Tirange ka hara rang */
-      }
-
-      .resume-container h3 {
-          color: #ff9933; /* Tirange ka kesariya rang */
-          margin-top: 25px;
-          margin-bottom: 10px;
-          border-bottom: 2px solid #f0f0f0;
-          padding-bottom: 5px;
-          font-size: 22px;
-      }
-
-      .resume-container .profile-header {
-          color: #1a237e;
-          font-size: 28px;
-          border: none;
-          margin-top: 0;
-      }
-
-      .resume-container p, .resume-container ul {
-          color: #444;
-          line-height: 1.6;
-          font-size: 16px;
-      }
-
-      .resume-container ul {
-          padding-left: 20px;
-          margin-bottom: 15px;
-      }
+        .card h3 {
+            color: #ff9933;
+            margin-bottom: 10px;
+        }
         
-      .resume-container li {
-          margin-bottom: 8px;
-      }
-      
-      /* Popup (Modal) Design */
-      .modal-overlay {
-          display: none; /* Normal time par chhipa rahega */
-          position: fixed;
-          top: 0; left: 0; width: 100%; height: 100%;
-          background-color: rgba(0,0,0,0.7); /* Peeche ka hissa thoda dark ho jayega */
-          z-index: 1000;
-          justify-content: center;
-          align-items: center;
-      }
+        .card p {
+            color: #444;
+            line-height: 1.5;
+        }
+        
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
 
-      .modal-content {
-          background-color: white;
-          padding: 40px;
-          border-radius: 8px;
-          width: 80%;
-          max-width: 700px;
-          text-align: left;
-          position: relative;
-          box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      }
+        .modal-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 700px;
+            text-align: left;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
 
-      .close-btn {
-          position: absolute;
-          top: 15px; right: 25px;
-          font-size: 28px;
-          font-weight: bold;
-          color: red;
-          cursor: pointer;
-      }
-
-      .card {
-          cursor: pointer; /* Box par mouse le jane par hand icon aayega */
-      }
+        .close-btn {
+            position: absolute;
+            top: 15px; right: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            color: red;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Background Animation Container added right at top -->
+    <div class="animation-bg-container" id="bgAnimationContainer"></div>
 
     <!-- Header & Tabs -->
     <nav>
@@ -353,7 +250,6 @@
     <!-- Companies & Corporate Documents Section -->
     <div id="companies" class="companies-section">
         
-        <!-- Part 1: Top Companies -->
         <!-- Section 1: Manufacturing Companies -->
         <h2 class="section-heading">Top Manufacturing Companies in India</h2>
 
@@ -364,13 +260,13 @@
                 <p>Bharat ke world-class infrastructure, engineering aur construction ko aage badhane wali sabse badi company.</p>
             </div>
 
-            <!-- Tata Motors Card (Link Updated here) -->
+            <!-- Tata Motors Card -->
             <div class="card" onclick="window.location.href='tata-motors.html';">
                 <h3 style="color: #ff9933;">Tata Motors</h3>
                 <p>Commercial aur passenger vehicles me desh ki shaan. Hi-tech automobile manufacturing me sabse aage.</p>
             </div>
 
-            <!-- Maruti Suzuki Card (Link Updated here) -->
+            <!-- Maruti Suzuki Card -->
             <div class="card" onclick="window.location.href='maruti-suzuki.html';">
                 <h3 style="color: #ff9933;">Maruti Suzuki</h3>
                 <p>Bharat ki sabse badi car manufacturer, jo modern manufacturing plants aur mass production ke liye jani jati hai.</p>
@@ -381,22 +277,22 @@
         <h2 class="section-heading">Corporate Documents & Letters</h2>
 
         <div class="card-container">
-            <!-- Offer Letter Card -->
-            <div class="card" onclick="window.location.href='offer-letter.html';" style="border-top-color: #1a237e;">
+            <!-- Offer Letter Card with Popup Function -->
+            <div class="card" onclick="showPopup('popup-offer')" style="border-top-color: #1a237e;">
                 <h3 style="color: #ff9933;">Offer Letter</h3>
                 <p>Company dwara select hone par shuruati prastav (proposal).</p>
                 <p><strong>(Format dekhne ke liye click karein)</strong></p>
             </div>
 
-            <!-- LOI Card -->
-            <div class="card" onclick="window.location.href='loi.html';" style="border-top-color: #ff9933;">
+            <!-- LOI Card with Popup Function -->
+            <div class="card" onclick="showPopup('popup-loi')" style="border-top-color: #ff9933;">
                 <h3 style="color: #ff9933;">Letter of Intent (LOI)</h3>
                 <p>Candidate aur company ke beech kaam shuru karne ka irada.</p>
                 <p><strong>(Format dekhne ke liye click karein)</strong></p>
             </div>
 
-            <!-- Appointment Letter Card -->
-            <div class="card" onclick="window.location.href='appointment.html';">
+            <!-- Appointment Letter Card with Popup Function -->
+            <div class="card" onclick="showPopup('popup-appointment')">
                 <h3 style="color: #ff9933;">Appointment Letter</h3>
                 <p>Final joining ke samay diya jane wala sabse zaroori document.</p>
                 <p><strong>(Format dekhne ke liye click karein)</strong></p>
@@ -404,36 +300,28 @@
         </div>
     </div>
 
-    <!-- Compact Message Section with Blue & Tiranga Gradient -->
+    <!-- Message Section -->
     <div id="about-me" style="background: linear-gradient(135deg, #1a237e 65%, #ff9933 85%, #ffffff 92%, #138808 100%); color: #ffffff; padding: 40px 5%; width: 100%; box-sizing: border-box;">
-        
         <div style="max-width: 1000px; text-align: left;">
             <h2 style="color: #ffb366; font-size: 28px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">
                 A Message from the Creator
             </h2>
-            
             <div style="font-size: 16px; line-height: 1.7; font-weight: 300;">
-                
                 <p style="margin-bottom: 12px; font-size: 20px; font-weight: bold;">
                     Hello, I am Anish Kumar Shukla.
                 </p>
-                
                 <p style="margin-bottom: 12px; color: #f0f0f0;">
                     As a Mechanical Engineering student at Govt. Polytechnic Ghaziabad, my vision is to drive India's hi-tech manufacturing and world-class infrastructure forward. Using CAD tools and practical innovations like my 'Footstep Power Generation' project, I strive to design sustainable and energy-efficient solutions for the future.
                 </p>
-
                 <p style="margin-top: 20px; font-size: 18px; font-weight: bold; color: #ffffff;">
                     Let's innovate and build a modern India together. 
                     <span style="color: #1a237e; background-color: #ffffff; padding: 4px 12px; border-radius: 4px; display: inline-block; margin-left: 10px;">Jai Hind! INDIA</span>
                 </p>
-                
             </div>
         </div>
     </div>
     
     <!-- Hidden Popups for Documents -->
-    
-    <!-- 1. Offer Letter Popup -->
     <div id="popup-offer" class="modal-overlay">
         <div class="modal-content">
             <span class="close-btn" onclick="closePopup('popup-offer')">&times;</span>
@@ -446,7 +334,6 @@
         </div>
     </div>
 
-    <!-- 2. Letter of Intent Popup -->
     <div id="popup-loi" class="modal-overlay">
         <div class="modal-content">
             <span class="close-btn" onclick="closePopup('popup-loi')">&times;</span>
@@ -457,7 +344,6 @@
         </div>
     </div>
 
-    <!-- 3. Appointment Letter Popup -->
     <div id="popup-appointment" class="modal-overlay">
         <div class="modal-content">
             <span class="close-btn" onclick="closePopup('popup-appointment')">&times;</span>
@@ -474,7 +360,7 @@
         </div>
     </div>
 
-    <!-- JavaScript (Click logic) -->
+    <!-- JavaScript Logic -->
     <script>
         function showPopup(id) {
             document.getElementById(id).style.display = 'flex';
@@ -483,53 +369,49 @@
         function closePopup(id) {
             document.getElementById(id).style.display = 'none';
         }
-    // -----------------------------------------------------------
-    // JavaScript to generate dynamic Stars and Floating Balloons
-    // -----------------------------------------------------------
-    document.addEventListener("DOMContentLoaded", function () {
-        const container = document.getElementById("bgAnimationContainer");
 
-        // 1. Generate Twinkling Stars (Count: 40)
-        for (let i = 0; i < 40; i++) {
-            let star = document.createElement("div");
-            star.classList.add("star");
-            
-            let size = Math.random() * 3 + 1; // Chote bade stars
-            star.style.width = `${size}px`;
-            star.style.height = `${size}px`;
-            star.style.top = `${Math.random() * 100}%`;
-            star.style.left = `${Math.random() * 100}%`;
-            
-            let duration = Math.random() * 3 + 2; // Twinkling speed
-            star.style.setProperty('--duration', `${duration}s`);
-            
-            container.appendChild(star);
-        }
+        document.addEventListener("DOMContentLoaded", function () {
+            const container = document.getElementById("bgAnimationContainer");
 
-        // 2. Generate Floating Bubbles / Balloons (Count: 25)
-        for (let j = 0; j < 25; j++) {
-            let balloon = document.createElement("div");
-            balloon.classList.add("balloon");
+            // 1. Generate Twinkling Stars (Count: 40)
+            for (let i = 0; i < 40; i++) {
+                let star = document.createElement("div");
+                star.classList.add("star");
+                
+                let size = Math.random() * 3 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.left = `${Math.random() * 100}%`;
+                
+                let duration = Math.random() * 3 + 2;
+                star.style.setProperty('--duration', `${duration}s`);
+                
+                container.appendChild(star);
+            }
 
-            let size = Math.random() * 30 + 10; // Size 10px se 40px tak (chote bade)
-            balloon.style.width = `${size}px`;
-            balloon.style.height = `${size}px`;
+            // 2. Generate Floating Balloons (Count: 25)
+            for (let j = 0; j < 25; j++) {
+                let balloon = document.createElement("div");
+                balloon.classList.add("balloon");
 
-            balloon.style.left = `${Math.random() * 100}%`; // Random horizontal position
+                let size = Math.random() * 30 + 10;
+                balloon.style.width = `${size}px`;
+                balloon.style.height = `${size}px`;
 
-            let speed = Math.random() * 8 + 6; // Uper jane ki speed (6s se 14s)
-            balloon.style.setProperty('--speed', `${speed}s`);
+                balloon.style.left = `${Math.random() * 100}%`;
 
-            let randomX = (Math.random() - 0.5) * 200 + 'px'; // Thoda left-right hilte hue udega
-            balloon.style.setProperty('--random-x', randomX);
+                let speed = Math.random() * 8 + 6;
+                balloon.style.setProperty('--speed', `${speed}s`);
 
-            // Har balloon ka delay alag hoga taaki ek sath na nikle
-            balloon.style.animationDelay = `${Math.random() * 8}s`;
+                let randomX = (Math.random() - 0.5) * 200 + 'px';
+                balloon.style.setProperty('--random-x', randomX);
 
-            container.appendChild(balloon);
-        }
-    });
+                balloon.style.animationDelay = `${Math.random() * 8}s`;
+
+                container.appendChild(balloon);
+            }
+        });
     </script>
-
 </body>
 </html>
