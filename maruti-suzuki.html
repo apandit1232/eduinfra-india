@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maruti Suzuki - Ultra-Luxury Enterprise Portal</title>
+    <!-- Premium Luxury Fonts: Marcellus for Headings, Outfit for Body -->
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           ULTRA-LUXURY MIXED PREMIUM CSS ARCHITECTURE (MARUTI SUZUKI EDITION)
+           ========================================================================== */
+        :root {
+            /* Deep Luxury Mixed Background Colors */
+            --bg-royal-navy: #0B1325;
+            --bg-deep-plum: #1A0F1E;
+            --bg-rich-slate: #11161A;
+            
+            /* Premium Metallic Accents */
+            --gold-champagne: #D4AF37;
+            --gold-muted: #AA8B2E;
+            --platinum: #E5E4E2;
+            
+            /* High-Contrast Luxury Text */
+            --text-title: #FFFFFF;
+            --text-body: #F3F4F6;
+            --text-muted: #9CA3AF;
+            
+            /* Luxury Frosted Glass */
+            --glass-bg: rgba(255, 255, 255, 0.025);
+            --glass-border: rgba(212, 175, 55, 0.15);
+            --glass-hover-border: rgba(212, 175, 55, 0.5);
+            
+            /* Typography */
+            --font-display: 'Marcellus', serif;
+            --font-body: 'Outfit', sans-serif;
+            
+            --transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* The Mixed Luxurious Background Animation */
+        body {
+            font-family: var(--font-body);
+            background: linear-gradient(135deg, var(--bg-royal-navy), var(--bg-deep-plum), var(--bg-rich-slate));
+            background-size: 400% 400%;
+            animation: luxuryGradient 15s ease infinite;
+            color: var(--text-body);
+            line-height: 1.85;
+            font-size: 16px;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        @keyframes luxuryGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* -----------------------------------------------------------
+           AMBIENT LUXURY ORBS (Gold & Sapphire Mix)
+           ----------------------------------------------------------- */
+        .lux-orb-1, .lux-orb-2 {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(140px);
+            z-index: -1;
+            opacity: 0.12;
+            pointer-events: none;
+            animation: floatOrb 12s infinite alternate;
+        }
+
+        .lux-orb-1 {
+            top: -15%;
+            left: -5%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, var(--gold-champagne), transparent);
+        }
+
+        .lux-orb-2 {
+            bottom: -15%;
+            right: -5%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, #2E5BFF, transparent);
+            animation-delay: -5s;
+        }
+
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(30px, 40px) scale(1.1); }
+        }
+
+        /* -----------------------------------------------------------
+           TYPOGRAPHY & HEADINGS (Elegant & Clean)
+           ----------------------------------------------------------- */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            color: var(--text-title);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .title-gradient {
+            background: linear-gradient(to right, #FFFFFF, var(--gold-champagne));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 2.6rem;
+            margin-top: 80px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background: var(--gold-champagne);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--gold-champagne);
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 25px;
+            text-align: justify;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* -----------------------------------------------------------
+           LUXURY HERO SECTION
+           ----------------------------------------------------------- */
+        .hero {
+            padding: 180px 0 120px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 850px;
+            margin: 0 auto;
+            color: var(--platinum);
+            text-align: center;
+            font-family: var(--font-body);
+            font-weight: 300;
+        }
+
+        /* -----------------------------------------------------------
+           PREMIUM FROSTED GLASS CARDS
+           ----------------------------------------------------------- */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            margin-top: 40px;
+        }
+
+        .luxury-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 50px;
+            transition: var(--transition);
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .luxury-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--glass-hover-border);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.08);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        /* -----------------------------------------------------------
+           SUBSIDIARY GRID
+           ----------------------------------------------------------- */
+        .sub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .sub-card {
+            background: linear-gradient(160deg, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.2) 100%);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 40px 35px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sub-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-champagne);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+        }
+
+        .sub-card h4 {
+            font-size: 1.35rem;
+            color: var(--platinum);
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 15px;
+            font-family: var(--font-display);
+        }
+
+        .sub-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+
+        /* -----------------------------------------------------------
+           EXECUTIVE BUTTONS & CTA
+           ----------------------------------------------------------- */
+        .cta-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(0,0,0,0.4));
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 70px;
+            text-align: center;
+            margin: 90px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            height: 1px;
+            background: radial-gradient(circle, var(--gold-champagne), transparent);
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 45px;
+            flex-wrap: wrap;
+        }
+
+        .gold-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold-champagne);
+            background: transparent;
+            border: 1px solid var(--gold-champagne);
+            border-radius: 4px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .gold-btn:hover {
+            color: #000;
+            background: var(--gold-champagne);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* -----------------------------------------------------------
+           PREMIUM FOOTER
+           ----------------------------------------------------------- */
+        footer {
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 60px 0 40px;
+            margin-top: 100px;
+            text-align: center;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3.8rem; }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 25px; }
+            .hero { padding: 140px 0 80px; }
+            .hero h1 { font-size: 2.8rem; }
+            .luxury-card { padding: 35px; }
+            .gold-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ambient Luxury Background Orbs -->
+    <div class="lux-orb-1"></div>
+    <div class="lux-orb-2"></div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="title-gradient">Maruti Suzuki</h1>
+            <p>Pioneering the future of global automotive engineering, advanced hybrid mobility, and lean manufacturing excellence with uncompromising precision since 1981.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Corporate Overview -->
+        <h2>The Apex of Automotive Mastery</h2>
+        <div class="luxury-card" style="margin-bottom: 70px;">
+            <p>Maruti Suzuki India Limited (MSIL) represents the undisputed zenith of the Indian automobile industry. Born from a historic partnership between the Government of India and Suzuki Motor Corporation of Japan, it has evolved into a colossal manufacturing powerhouse. Operating highly advanced facilities in Gurgaon, Manesar, and Gujarat, Maruti Suzuki dictates the tempo of the global passenger vehicle market, blending Japanese lean manufacturing philosophies with unparalleled Indian engineering prowess.</p>
+            
+            <p>The operational philosophy governing Maruti Suzuki's execution capabilities is rooted in data-driven precision, Kaizen (continuous improvement), and sustainable innovation. Whether engineering next-generation Smart Hybrid architectures or optimizing massive supply chains, the conglomerate leverages artificial intelligence, advanced robotics, and strict project management protocols. This ensures that every vehicle rolling off the assembly line is delivered with absolute mechanical perfection.</p>
+        </div>
+
+        <!-- Technical Excellence -->
+        <h2>Advanced Automobile Engineering</h2>
+        <div class="grid-2">
+            <div class="luxury-card">
+                <h3>Work Study & Assembly Optimization</h3>
+                <p>To eliminate operational bottlenecks across the world's most rapid automotive assembly lines, Maruti Suzuki’s industrial engineering departments deploy rigorous Method Study protocols. Every macro and micro-process on the shop floor undergoes intense scrutiny. Engineers utilize highly precise Motion Analysis to guarantee total Motion Economy, thereby entirely eradicating wasted human and mechanical effort to meet strict Just-in-Time (JIT) manufacturing goals.</p>
+                <p>For highly repetitive and intricate manufacturing tasks, the integration of SIMO charts (Simultaneous Motion Cycle Chart) is standard practice. These charts facilitate granular analysis of operators' synchronous movements against precise time scales. By applying practical levels of measurement—ranging from nominal categorization of defect types to ratio-level timing of robotic welding cycles—Maruti Suzuki maintains a pristine Six Sigma quality standard.</p>
+            </div>
+
+            <div class="luxury-card">
+                <h3>Engine Diagnostics & Powertrain Overhaul</h3>
+                <p>Ensuring absolute vehicle reliability demands highly sophisticated diagnostic and engine overhauling procedures. Maruti Suzuki excels in the complete disassembly, microscopic inspection, precision machining, and reassembly of its highly acclaimed K-Series advanced powertrains to restore them to stringent original factory tolerances.</p>
+                <p>Furthermore, modern automotive architecture is heavily reliant on integrated electronics. Specialized technicians master complex vehicle electrical systems, advanced hybrid architectures, and sophisticated telemetry arrays. Crucially, passenger comfort in extreme thermal environments is guaranteed through the meticulous engineering and servicing of high-capacity climate control components (HVAC), ensuring optimal cabin cooling under intense ambient stress.</p>
+            </div>
+        </div>
+
+        <!-- Governance & HR -->
+        <h2>Corporate Governance & Human Capital</h2>
+        <div class="grid-2">
+            <div class="luxury-card">
+                <h3>Statutory Safety Compliance</h3>
+                <p>Maruti Suzuki operates under a strict Zero Harm mandate. Managing vast heavy engineering zones, high-pressure die-casting units, and automated paint shops requires absolute adherence to industrial safety regulations. The organization treats compliance with the Factories Act 1948 not merely as a legal boundary, but as the foundational baseline for all its manufacturing operations.</p>
+                <p>This includes the rigorous enforcement of hazardous material protocols, absolute mandates on high-grade Personal Protective Equipment (PPE) around heavy machinery, strict monitoring of ambient industrial heat, and scientifically calculated shift rotations to prevent ergonomic fatigue. Continuous internal safety audits ensure the operational matrix remains impervious to accidents.</p>
+            </div>
+
+            <div class="luxury-card">
+                <h3>Strategic Wage Architecture</h3>
+                <p>To attract and retain the world’s leading automotive engineering talent and highly skilled shop-floor technicians, Maruti Suzuki implements an aggressive and transparent wage structure. HR financial analysts continuously cross-reference macroeconomic inflation data against internal compensation scales.</p>
+                <p>By doing so, they maintain a critical, equitable balance between nominal wages (the actual numerical monetary figure paid) and real wages (the true economic purchasing power of that salary in the current market). This strategic calibration ensures that the workforce's standard of living is actively protected, fostering a deep environment of organizational loyalty.</p>
+            </div>
+        </div>
+
+        <!-- Executive Documents CTA -->
+        <div class="cta-box">
+            <h2 style="margin-top: 0; border: none; font-size: 2.2rem; text-align: center;">Corporate Documentation Gateway</h2>
+            <p style="text-align: center; max-width: 750px; margin: 0 auto; color: var(--platinum);">Access the highly standardized, legally vetted templates utilized by Maruti Suzuki's Global Human Resources divisions for executive appointments and technical onboarding protocols.</p>
+            
+            <div class="btn-group">
+                <a href="offer-letter.html" class="gold-btn">Offer Letter</a>
+                <a href="loi.html" class="gold-btn">LOI Document</a>
+                <a href="appointment.html" class="gold-btn">Appointment</a>
+            </div>
+        </div>
+
+        <!-- Subsidiaries Section -->
+        <h2>The Global Automotive Ecosystem</h2>
+        <div class="sub-grid">
+            <div class="sub-card">
+                <h4>NEXA</h4>
+                <p>The premium automotive retail channel established by Maruti Suzuki to cater to high-end customers. NEXA redefined the car-buying experience in India by offering a highly sophisticated, digitally integrated, and luxurious hospitality environment.</p>
+            </div>
+
+            <div class="sub-card">
+                <h4>Suzuki Motor Gujarat (SMG)</h4>
+                <p>A massive, state-of-the-art manufacturing facility established on a contract manufacturing basis. This highly automated plant plays a critical role in expanding production capacities to meet immense global and domestic demand.</p>
+            </div>
+
+            <div class="sub-card">
+                <h4>Maruti Suzuki True Value</h4>
+                <p>The organized pre-owned car division of Maruti Suzuki. It ensures absolute trust and transparency in the used-car market through rigorous 376-point mechanical checks, digital evaluations, and certified warranty structures.</p>
+            </div>
+
+            <div class="sub-card">
+                <h4>Maruti Suzuki Smart Finance</h4>
+                <p>An end-to-end digital automotive finance platform. It integrates multiple premier banking institutions to provide customers with customized, highly structured capital solutions and seamless loan approvals.</p>
+            </div>
+
+            <div class="sub-card">
+                <h4>Maruti Suzuki Driving School</h4>
+                <p>A corporate initiative aimed at cultivating world-class, safe driving practices. Utilizing advanced simulators and scientifically designed curriculums, it represents a core pillar of the company's commitment to road safety.</p>
+            </div>
+
+            <div class="sub-card">
+                <h4>Maruti Insurance Broking</h4>
+                <p>A dedicated financial subsidiary ensuring comprehensive risk management for vehicle owners. It provides seamless, cashless accident repairs and robust insurance policies integrated directly with the manufacturer's network.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Luxury Minimal Footer -->
+    <footer>
+        <div class="container">
+            <h3 style="justify-content: center; margin-bottom: 10px; font-family: var(--font-display); font-size: 1.8rem; color: #fff;">EduInfra India</h3>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto; font-size: 0.95rem; color: var(--text-muted);">Architected with an ultra-premium mixed luxury UI framework for high-end automotive engineering documentation.</p>
+            <p style="text-align: center; margin-top: 35px; font-size: 0.85rem; opacity: 0.4;">&copy; 2026 EduInfra India. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
