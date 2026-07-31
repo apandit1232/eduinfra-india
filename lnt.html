@@ -3,38 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Larsen & Toubro (L&T) - Corporate Overview & Ecosystem</title>
-    <!-- Modern Corporate Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Larsen & Toubro (L&T) - Advanced Corporate Enterprise</title>
+    <!-- Ultra Premium Modern Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         /* ==========================================================================
-           MODERN CORPORATE LIGHT CSS FRAMEWORK
+           ADVANCED GLASSMORPHISM & ENTERPRISE UI (APPLE / STRIPE AESTHETIC)
            ========================================================================== */
         :root {
-            /* Clean Corporate Colors */
-            --primary-navy: #0A2540;
-            --secondary-blue: #0F3D6E;
-            --accent-yellow: #F2A900;
-            --accent-green: #007A33;
-            --bg-light: #F6F9FC;
-            --white-pure: #FFFFFF;
+            /* Advanced Color Palette */
+            --bg-body: #F8FAFC;
+            --bg-mesh-1: #E0E7FF;
+            --bg-mesh-2: #DBEAFE;
             
-            /* Text Colors for Perfect Contrast */
-            --text-main: #334155;
-            --text-light: #64748B;
             --text-heading: #0F172A;
-            --text-on-dark: #FFFFFF;
-            --text-on-dark-muted: #E2E8F0;
-
+            --text-body: #334155;
+            --text-muted: #64748B;
+            
+            --brand-primary: #2563EB;
+            --brand-secondary: #0EA5E9;
+            
+            /* Glassmorphism Variables */
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --glass-shadow: 0 10px 40px -10px rgba(15, 23, 42, 0.08);
+            
+            /* Footer Variables */
+            --footer-bg-top: #0F172A;
+            --footer-bg-bottom: #020617;
+            
             /* Typography */
-            --font-heading: 'Montserrat', sans-serif;
-            --font-body: 'Inter', sans-serif;
-
-            /* Shadows & Effects */
-            --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-            --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease-in-out;
+            --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -44,225 +45,329 @@
         }
 
         body {
-            font-family: var(--font-body);
-            background-color: var(--bg-light);
-            color: var(--text-main);
-            line-height: 1.8;
+            font-family: var(--font-family);
+            background-color: var(--bg-body);
+            color: var(--text-body);
+            line-height: 1.85;
             font-size: 16px;
+            font-weight: 400;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            position: relative;
         }
 
-        /* Headings */
+        /* Subtle Mesh Gradient Background Elements for Advanced Look */
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        body::before {
+            top: -200px;
+            left: -200px;
+            background: var(--bg-mesh-1);
+        }
+
+        body::after {
+            bottom: 20%;
+            right: -200px;
+            background: var(--bg-mesh-2);
+        }
+
+        /* Typography */
         h1, h2, h3, h4 {
-            font-family: var(--font-heading);
             color: var(--text-heading);
-            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        /* Gradient Text for Main Headings */
+        .gradient-text {
+            background: linear-gradient(135deg, #0F172A 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         h2 {
             font-size: 2.2rem;
-            font-weight: 700;
-            margin-top: 60px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #E2E8F0;
+            margin: 80px 0 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
         h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--secondary-blue);
-            margin-top: 30px;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-heading);
         }
 
         p {
             margin-bottom: 24px;
-            color: var(--text-main);
             text-align: justify;
+            font-size: 1.05rem;
+            letter-spacing: 0.01em;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1240px;
             margin: 0 auto;
-            padding: 0 30px;
+            padding: 0 40px;
         }
 
-        /* Hero Header (Dark Navy with Pure White Text) */
+        /* Hero Header */
         .hero {
-            background-color: var(--primary-navy);
-            background-image: linear-gradient(135deg, var(--primary-navy) 0%, #0d3056 100%);
-            padding: 120px 0;
+            padding: 140px 0 100px;
             text-align: center;
-            border-bottom: 5px solid var(--accent-yellow);
         }
 
         .hero h1 {
-            color: var(--text-on-dark);
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 800;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.04em;
             margin-bottom: 24px;
         }
 
         .hero p {
-            color: var(--text-on-dark-muted);
             font-size: 1.25rem;
+            color: var(--text-muted);
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
-            font-weight: 300;
         }
 
-        /* Content Sections */
-        .content-section {
-            background: var(--white-pure);
+        /* Glassmorphism Cards */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
             padding: 50px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-card);
-            margin-top: -40px;
-            margin-bottom: 60px;
-            position: relative;
-            z-index: 10;
+            box-shadow: var(--glass-shadow);
+            margin-bottom: 40px;
+            transition: var(--transition);
         }
 
+        .glass-panel:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.12);
+        }
+
+        /* Split Grid Layout */
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
-        .info-card {
-            background: var(--bg-light);
-            padding: 40px;
-            border-radius: 8px;
-            border-left: 4px solid var(--secondary-blue);
-            transition: var(--transition);
-        }
-
-        .info-card:hover {
-            box-shadow: var(--shadow-hover);
-            transform: translateY(-5px);
-        }
-
-        /* Call to Action Banner */
-        .cta-banner {
-            background-color: var(--white-pure);
-            border: 1px solid #E2E8F0;
-            border-radius: 12px;
-            padding: 50px;
-            text-align: center;
-            margin: 60px 0;
-            box-shadow: var(--shadow-card);
-        }
-
-        .cta-banner h3 {
-            margin-top: 0;
-            color: var(--text-heading);
-        }
-
-        .btn-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 28px;
-            font-family: var(--font-heading);
-            font-weight: 600;
-            font-size: 1rem;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .btn-primary {
-            background-color: var(--primary-navy);
-            color: var(--white-pure);
-            border: 2px solid var(--primary-navy);
-        }
-
-        .btn-primary:hover {
-            background-color: transparent;
-            color: var(--primary-navy);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--primary-navy);
-            border: 2px solid var(--primary-navy);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary-navy);
-            color: var(--white-pure);
-        }
-
-        /* Subsidiaries Grid */
+        /* Subsidiary Grid */
         .sub-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
 
         .sub-card {
-            background: var(--white-pure);
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-card);
-            border-top: 4px solid var(--primary-navy);
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px 35px;
+            box-shadow: var(--glass-shadow);
             transition: var(--transition);
             display: flex;
             flex-direction: column;
+            position: relative;
+            overflow: hidden;
         }
 
-        .sub-card:nth-child(2n) { border-top-color: var(--accent-yellow); }
-        .sub-card:nth-child(3n) { border-top-color: var(--accent-green); }
+        /* Accent Line on Sub Cards */
+        .sub-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+            opacity: 0;
+            transition: var(--transition);
+        }
 
         .sub-card:hover {
             transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
+            box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.15);
+        }
+
+        .sub-card:hover::before {
+            opacity: 1;
         }
 
         .sub-card h4 {
-            font-size: 1.2rem;
-            color: var(--text-heading);
+            font-size: 1.25rem;
             margin-bottom: 15px;
         }
 
         .sub-card p {
             font-size: 0.95rem;
-            color: var(--text-light);
+            color: var(--text-muted);
             margin-bottom: 0;
             flex-grow: 1;
         }
 
-        /* Footer */
-        footer {
-            background-color: var(--primary-navy);
-            color: var(--text-on-dark-muted);
+        /* CTA Banner */
+        .cta-banner {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 60px;
             text-align: center;
-            padding: 40px 20px;
-            margin-top: 80px;
-            font-size: 0.9rem;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Responsive */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: var(--transition);
+            letter-spacing: 0.02em;
+        }
+
+        .btn-primary {
+            background: var(--text-heading);
+            color: #ffffff;
+            border: 2px solid var(--text-heading);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--text-heading);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-heading);
+            border: 2px solid #cbd5e1;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-heading);
+        }
+
+        /* ==========================================================================
+           THE ADVANCED FOOTER (Perfectly Designed Sabse Neeche Ka BG)
+           ========================================================================== */
+        footer {
+            background: linear-gradient(180deg, var(--footer-bg-top) 0%, var(--footer-bg-bottom) 100%);
+            color: #94A3B8;
+            padding: 100px 0 40px;
+            margin-top: 120px;
+            position: relative;
+        }
+
+        /* Glowing Tech Line separating Content and Footer */
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--brand-secondary), var(--brand-primary), transparent);
+            opacity: 0.8;
+            box-shadow: 0 2px 15px rgba(37, 99, 235, 0.5);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h2 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .footer-brand p {
+            color: #64748B;
+            font-size: 0.95rem;
+            max-width: 400px;
+            text-align: left;
+        }
+
+        .footer-links h4 {
+            color: #F8FAFC;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #94A3B8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 30px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design */
         @media (max-width: 992px) {
-            .grid-2 { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.8rem; }
+            .grid-2, .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero h1 { font-size: 3rem; }
         }
 
         @media (max-width: 768px) {
-            .hero { padding: 80px 20px; }
-            .hero h1 { font-size: 2.2rem; }
-            .content-section { padding: 30px; margin-top: -20px; }
-            .info-card { padding: 25px; }
-            .btn-container { flex-direction: column; }
+            .container { padding: 0 25px; }
+            .hero { padding: 100px 0 60px; }
+            .hero h1 { font-size: 2.4rem; }
+            .glass-panel { padding: 35px; }
+            .btn-group { flex-direction: column; }
             .btn { width: 100%; text-align: center; }
         }
     </style>
@@ -272,118 +377,136 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="container">
-            <h1>Larsen & Toubro</h1>
-            <p>Pioneering the future of global engineering, construction, manufacturing, and advanced technology infrastructure since 1938.</p>
+            <h1 class="gradient-text">Larsen & Toubro</h1>
+            <p>Architecting the future of global engineering, aerospace, heavy manufacturing, and advanced digital infrastructure since 1938.</p>
         </div>
     </header>
 
     <div class="container">
         
-        <!-- Main Corporate Content Block -->
-        <div class="content-section">
-            <h2>Corporate Genesis & Scale of Operations</h2>
-            <p>Larsen & Toubro (L&T) is an Indian multinational conglomerate founded in Mumbai by two Danish engineers, Henning Holck-Larsen and Søren Kristian Toubro. Over the span of several decades, L&T has transformed from a modest engineering firm into a formidable industrial giant. Today, it orchestrates some of the most complex, massive, and technologically demanding projects on the planet. Operating across more than 50 countries, the conglomerate has established a vast footprint in diverse sectors including heavy civil infrastructure, hydrocarbon engineering, defense manufacturing, aerospace components, and highly sophisticated digital technology solutions.</p>
+        <!-- Corporate Overview -->
+        <h2 class="gradient-text">Scale & Global Footprint</h2>
+        <div class="glass-panel">
+            <p>Larsen & Toubro (L&T) is a premier Indian multinational conglomerate founded by Henning Holck-Larsen and Søren Kristian Toubro. Over decades of relentless execution, L&T has evolved into an industrial titan, orchestrating some of the most technologically demanding and massive engineering projects globally. Operating in over 50 nations, the organization commands a dominant presence across heavy civil infrastructure, hydrocarbon engineering, defense manufacturing, and complex digital architectures.</p>
             
-            <p>The operational scale of L&T is immense. The company relies on a deeply ingrained culture of precision engineering, continuous innovation, and rigorous project management protocols. By utilizing cutting-edge digital transformation tools, artificial intelligence in construction analytics, and massive human capital, L&T delivers mega-projects of unparalleled magnitude with uncompromising quality and punctuality.</p>
+            <p>The operational philosophy governing L&T's execution capabilities is rooted in data-driven precision. Whether forging supercritical nuclear reactor vessels or constructing smart megacities, the conglomerate leverages artificial intelligence, advanced robotics, and strict project management protocols to ensure that projects of unprecedented magnitude are delivered with absolute mechanical perfection.</p>
+        </div>
 
-            <h2>Industrial Excellence & Engineering Methodologies</h2>
-            <p>At the core of L&T's global dominance are its manufacturing and heavy engineering divisions. These facilities operate as highly sophisticated ecosystems where theoretical industrial engineering frameworks meet practical, large-scale execution to achieve maximum operational efficiency and zero-defect production.</p>
-
-            <div class="grid-2">
-                <div class="info-card">
-                    <h3>Work Study & Assembly Optimization</h3>
-                    <p>To maintain peak productivity and eliminate operational bottlenecks in massive assembly lines, L&T’s industrial engineering departments deploy highly detailed Method Study protocols. Every macro and micro-process on the shop floor undergoes intense scrutiny. The engineers rely heavily on Motion Analysis to ensure absolute Motion Economy. By evaluating the ergonomic and mechanical movements required for complex fabrications, the company entirely eradicates wasted effort.</p>
-                    <p>For repetitive and intricate manufacturing tasks, the utilization of SIMO charts (Simultaneous Motion Cycle Chart) is standard practice. These charts allow for the granular analysis of the operators' left and right hand movements against a common time scale, identifying instances of unavoidable delay. By applying practical levels of measurement ranging from nominal classifications of defect types to ratio-level timing of assembly cycles, L&T achieves a Six Sigma level of quality control, drastically reducing human fatigue and elevating overall throughput.</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>Heavy Machinery Diagnostics & Maintenance</h3>
-                    <p>In the construction and mining equipment sectors, machine reliability in extremely hostile environments is an absolute requirement. L&T's approach to the maintenance of colossal earth-moving equipment involves highly sophisticated engine overhauling procedures. This requires the complete disassembly, microscopic inspection, precision machining, and reassembly of high-capacity engines to restore them to their original factory tolerances.</p>
-                    <p>Beyond the mechanical powertrain, modern heavy machinery is heavily reliant on integrated electronics. L&T's technical divisions specialize in diagnosing and repairing complex vehicle electrical systems, ensuring that engine control modules, sensor networks, and telemetry systems function flawlessly under extreme stress. Additionally, operator safety and efficiency are prioritized through the meticulous servicing of cabin climate control components. Proper HVAC maintenance ensures that operators remain insulated from the extreme heat and toxic dust typical of major construction and mining sites.</p>
-                </div>
+        <!-- Technical Excellence -->
+        <h2 class="gradient-text">Industrial Engineering & Manufacturing</h2>
+        <div class="grid-2">
+            <div class="glass-panel">
+                <h3>Assembly Optimization & Work Study</h3>
+                <p>To eliminate operational bottlenecks in massive assembly lines, L&T’s engineering departments deploy rigorous Method Study protocols. Every process on the shop floor undergoes intense scrutiny. Engineers utilize Motion Analysis to guarantee Motion Economy, thereby entirely eradicating wasted human and mechanical effort.</p>
+                <p>For highly repetitive manufacturing tasks, the integration of SIMO charts (Simultaneous Motion Cycle Chart) is standard practice. These charts facilitate granular analysis of operators' synchronous movements against precise time scales. By applying practical levels of measurement—ranging from nominal categorization of defect types to ratio-level timing of assembly cycles—L&T maintains a pristine Six Sigma quality standard, minimizing fatigue and elevating throughput.</p>
             </div>
 
-            <h2>Governance, Industrial Safety, & Human Resources</h2>
-            <p>Managing an elite workforce of hundreds of thousands demands a sophisticated, transparent, and ethically uncompromising Human Resources framework alongside an absolute commitment to occupational health and safety protocols.</p>
+            <div class="glass-panel">
+                <h3>Heavy Machinery & Diagnostics</h3>
+                <p>In the construction and mining equipment sectors, machine reliability in hostile environments is an absolute requirement. L&T's approach involves highly sophisticated engine overhauling procedures, requiring the complete disassembly, sonic inspection, precision machining, and reassembly of high-capacity powertrains to restore original factory tolerances.</p>
+                <p>Furthermore, modern excavation architecture is heavily reliant on integrated electronics. L&T's technicians maintain complete control over complex vehicle electrical systems and telemetry arrays. Crucially, operator survivability and focus in extreme environments are guaranteed through the meticulous servicing of high-capacity climate control components (HVAC). This ensures that machines and operators perform flawlessly amidst intense thermal and particulate stress.</p>
+            </div>
+        </div>
 
-            <div class="grid-2">
-                <div class="info-card">
-                    <h3>Statutory Safety & Regulatory Compliance</h3>
-                    <p>L&T operates under a stringent vision of zero harm. In an industry fraught with inherent mechanical and environmental risks, the company enforces rigorous industrial safety regulations across all manufacturing units and construction sites globally. The organization ensures absolute, uncompromising compliance with statutory frameworks, most notably the Factories Act 1948 in India.</p>
-                    <p>Compliance with the Factories Act goes far beyond basic legal obligations; it is fully integrated into the daily operational matrix. This encompasses the mandatory implementation of robust machine guarding mechanisms, the establishment of comprehensive ventilation to manage industrial heat stress, strict limitations on continuous working hours, and the non-negotiable provision of high-grade Personal Protective Equipment (PPE). Regular internal safety audits and emergency drills ensure a universally protected operational environment.</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>Strategic Compensation & Wage Structures</h3>
-                    <p>Attracting and retaining the world’s leading engineering talent and skilled labor requires a highly strategic and equitable human capital management system. L&T’s HR division employs a transparent and meticulously structured wage structure that aligns with industry benchmarks, geographical economic conditions, and individual performance metrics.</p>
-                    <p>A critical component of L&T's compensation philosophy is the continuous evaluation of macroeconomic indicators, particularly inflation and the Consumer Price Index. The HR and financial analysts ensure a careful calibration between nominal wages, which is the actual numerical monetary figure paid to the employee, and real wages, which represents the true purchasing power of that money in the current market. By actively balancing these figures, L&T guarantees that the standard of living of its workforce remains strong and continuously protected.</p>
-                </div>
+        <!-- Governance & HR -->
+        <h2 class="gradient-text">Governance, Safety & Human Capital</h2>
+        <div class="grid-2">
+            <div class="glass-panel">
+                <h3>Statutory Safety Compliance</h3>
+                <p>L&T operates under a strict "Zero Harm" mandate. Operating in high-risk engineering zones requires absolute adherence to industrial safety regulations. The organization treats compliance with the Factories Act 1948 not merely as a legal boundary, but as the foundational baseline for all its operations.</p>
+                <p>This includes the rigorous enforcement of hazardous material protocols, absolute mandates on high-grade Personal Protective Equipment (PPE), strict monitoring of ambient industrial heat, and scientifically calculated shift rotations. Continuous internal safety audits and hazard assessments ensure the operational matrix remains impervious to accidents.</p>
             </div>
 
-            <!-- Documents Action Banner -->
-            <div class="cta-banner">
-                <h3>Corporate Documentation Gateway</h3>
-                <p>Access the highly standardized, legally vetted templates utilized by Larsen & Toubro's Global Human Resources divisions for executive appointments, technical onboarding, and formal contractual agreements.</p>
-                
-                <div class="btn-container">
-                    <a href="offer-letter.html" class="btn btn-primary">View Offer Letter</a>
-                    <a href="loi.html" class="btn btn-outline">Examine LOI Document</a>
-                    <a href="appointment.html" class="btn btn-outline">Access Appointment Letter</a>
-                </div>
+            <div class="glass-panel">
+                <h3>Strategic Wage Architecture</h3>
+                <p>To attract and retain the world’s leading engineering talent, L&T implements an aggressive and transparent wage structure. The HR financial analysts continuously cross-reference macroeconomic inflation data against internal compensation scales.</p>
+                <p>By doing so, they maintain a critical, equitable balance between nominal wages (the actual numerical monetary figure paid) and real wages (the true economic purchasing power of that salary in the current market). This strategic calibration ensures that the workforce's standard of living is actively protected, fostering a deep environment of organizational loyalty.</p>
+            </div>
+        </div>
+
+        <!-- Documents Action Banner -->
+        <div class="cta-banner">
+            <h3 style="font-size: 1.8rem; margin-bottom: 15px;">Corporate Documentation Gateway</h3>
+            <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto;">Access the standardized, legally vetted templates utilized by Larsen & Toubro's Global Human Resources divisions for executive appointments and technical onboarding.</p>
+            
+            <div class="btn-group">
+                <a href="offer-letter.html" class="btn btn-primary">View Offer Letter</a>
+                <a href="loi.html" class="btn btn-outline">Examine LOI Document</a>
+                <a href="appointment.html" class="btn btn-outline">Access Appointment Letter</a>
+            </div>
+        </div>
+
+        <!-- Subsidiaries Section -->
+        <h2 class="gradient-text">The Global Ecosystem</h2>
+        <div class="sub-grid">
+            <div class="sub-card">
+                <h4>L&T Technology Services (LTTS)</h4>
+                <p>An elite pure-play Engineering Research and Development firm. LTTS pioneers digital transformation, mechanical design, and embedded systems engineering for Fortune 500 corporations globally.</p>
             </div>
 
-            <!-- Subsidiaries Grid Section -->
-            <h2>The Global Ecosystem: Independent Companies</h2>
-            <p>The massive scale of the L&T conglomerate necessitates the functioning of multiple highly specialized independent companies. Each subsidiary operates with its own board and strategic vision, dominating their respective global markets while contributing to the consolidated strength of the parent group.</p>
+            <div class="sub-card">
+                <h4>LTIMindtree</h4>
+                <p>A powerhouse in global technology consulting and enterprise digital solutions, navigating the complexities of cloud architecture, AI, and advanced data analytics.</p>
+            </div>
 
-            <div class="sub-grid">
-                <div class="sub-card">
-                    <h4>L&T Technology Services (LTTS)</h4>
-                    <p>A premier global pure-play Engineering Research and Development services company. LTTS offers design and development solutions throughout the product development chain, specializing in mechanical engineering, embedded systems, software engineering, and the comprehensive digitalization of manufacturing processes for top Fortune 500 companies.</p>
-                </div>
+            <div class="sub-card">
+                <h4>L&T Finance Holdings</h4>
+                <p>The financial bedrock of the group, providing highly structured capital solutions, from vast infrastructure funding to specialized rural and housing finance.</p>
+            </div>
 
-                <div class="sub-card">
-                    <h4>LTIMindtree</h4>
-                    <p>Formed through the strategic merger of L&T Infotech and Mindtree, this entity stands as a global technology consulting and digital solutions powerhouse. LTIMindtree enables enterprises across industries to reimagine business models by harnessing complex cloud computing architecture, artificial intelligence, and advanced data analytics.</p>
-                </div>
+            <div class="sub-card">
+                <h4>L&T Hydrocarbon Engineering</h4>
+                <p>The definitive leader in 'design-to-build' solutions for the global oil and gas sector, architecting colossal offshore drilling platforms and petrochemical refineries.</p>
+            </div>
 
-                <div class="sub-card">
-                    <h4>L&T Finance Holdings</h4>
-                    <p>A leading Non-Banking Financial Company in India, providing a diverse range of structured financial products. The company is strategically focused on rural finance, housing finance, and complex infrastructure financing. Their robust risk management frameworks make them a pivotal player in India's financial sector.</p>
-                </div>
+            <div class="sub-card">
+                <h4>L&T Realty</h4>
+                <p>Defining the future of commercial and residential architecture by applying heavy engineering precision to construct premium, sustainable urban real estate and IT parks.</p>
+            </div>
 
-                <div class="sub-card">
-                    <h4>L&T Hydrocarbon Engineering</h4>
-                    <p>This division delivers bespoke design-to-build engineering and construction solutions across the global hydrocarbon spectrum. This includes colossal offshore drilling platforms, subsea pipelines, massive onshore refineries, and petrochemical plants in some of the most geographically challenging environments in the world.</p>
-                </div>
-
-                <div class="sub-card">
-                    <h4>L&T Realty</h4>
-                    <p>The real estate development arm of L&T, known for setting benchmarks in the industry through architectural excellence and sustainable design. L&T Realty applies heavy engineering precision to develop premium residential complexes, cutting-edge commercial IT parks, and massive retail spaces.</p>
-                </div>
-
-                <div class="sub-card">
-                    <h4>L&T Metro Rail (Hyderabad)</h4>
-                    <p>An independent Special Purpose Vehicle established to execute and operate the Hyderabad Metro Rail project. Representing one of the world's largest public-private partnerships in the urban transit sector, it manages the complex integration of rolling stock, signaling systems, and automated fare collection.</p>
-                </div>
-                
-                <div class="sub-card">
-                    <h4>L&T Defense</h4>
-                    <p>A critical partner to India's armed forces and aerospace programs. L&T Defense designs, develops, and manufactures state-of-the-art weapon systems, armored vehicles, nuclear submarine hulls, and advanced radar systems, playing a monumental role in indigenous defense manufacturing and national security.</p>
-                </div>
-
-                <div class="sub-card">
-                    <h4>L&T Power</h4>
-                    <p>Specializing in the execution of coal-based and gas-based power projects on a turnkey basis. L&T Power possesses the capability to manufacture supercritical and ultra-supercritical boilers and turbines, strictly adhering to environmental emission norms while maximizing thermal efficiency for national power grids.</p>
-                </div>
+            <div class="sub-card">
+                <h4>L&T Defense</h4>
+                <p>A critical pillar of sovereign security. Engineers and manufactures highly classified, state-of-the-art weapon platforms, nuclear submarine hulls, and aerospace components.</p>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- ADVANCED FOOTER -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 EduInfra India Corporate Portal. Designed for Technical & Professional Documentation.</p>
+            <div class="footer-grid">
+                <!-- Brand Info -->
+                <div class="footer-brand">
+                    <h2>EduInfra India</h2>
+                    <p>Designed as a premium, enterprise-grade portal to showcase architectural layout, engineering documentation formatting, and modern UI/UX principles.</p>
+                </div>
+                
+                <!-- Dummy Links 1 -->
+                <div class="footer-links">
+                    <h4>Corporate Governance</h4>
+                    <ul>
+                        <li><a href="#">Investor Relations</a></li>
+                        <li><a href="#">Sustainability Reports</a></li>
+                        <li><a href="#">Board of Directors</a></li>
+                        <li><a href="#">Ethics & Compliance</a></li>
+                    </ul>
+                </div>
+
+                <!-- Dummy Links 2 -->
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Global Careers</a></li>
+                        <li><a href="#">Media & Press</a></li>
+                        <li><a href="#">Technical Whitepapers</a></li>
+                        <li><a href="#">Contact Directory</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 EduInfra India Corporate Portal. All rights reserved. Built with advanced glassmorphism UI.</p>
+            </div>
         </div>
     </footer>
 
