@@ -3,119 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Larsen & Toubro (L&T) - Detailed Overview</title>
+    <title>Larsen & Toubro (L&T) - Corporate Overview & Subsidiaries</title>
     <style>
+        /* Modern CSS for a Premium Corporate Look */
+        :root {
+            --primary-blue: #0d2b5e;
+            --secondary-blue: #15438c;
+            --accent-orange: #ff8c00;
+            --accent-green: #138808;
+            --text-dark: #333333;
+            --text-light: #555555;
+            --bg-gray: #f7f9fc;
+            --white: #ffffff;
+        }
+
         body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
             margin: 0; 
-            background-color: #f4f4f4; 
-            line-height: 1.6;
+            background-color: var(--bg-gray); 
+            color: var(--text-dark);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
         }
         
+        /* Hero Header Section */
         header { 
-            background-color: #1a237e; 
-            color: white; 
-            padding: 20px; 
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white); 
+            padding: 60px 20px; 
             text-align: center; 
-            border-bottom: 5px solid #138808; 
+            border-bottom: 6px solid var(--accent-orange); 
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin: 0 0 10px 0;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
+        /* Main Container */
         .container { 
-            max-width: 1000px; 
-            margin: 40px auto; 
-            padding: 30px; 
-            background: white; 
-            border-top: 5px solid #ff9933; 
-            border-radius: 8px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            max-width: 1200px; 
+            margin: -40px auto 50px; 
+            padding: 40px 50px; 
+            background: var(--white); 
+            border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            position: relative;
         }
         
-        h2 { color: #1a237e; border-bottom: 2px solid #eee; padding-bottom: 10px;}
-        h3 { color: #ff9933; margin-top: 25px; }
+        /* Typography */
+        h2 { 
+            color: var(--primary-blue); 
+            font-size: 2rem;
+            border-bottom: 2px solid #eaeaea; 
+            padding-bottom: 12px;
+            margin-top: 40px;
+        }
         
-        .info-box {
-            background-color: #f8f9fa;
-            border-left: 4px solid #1a237e;
-            padding: 15px 20px;
-            margin: 20px 0;
+        h3 { 
+            color: var(--secondary-blue); 
+            font-size: 1.4rem;
+            margin-top: 30px; 
+            display: flex;
+            align-items: center;
+        }
+
+        h3::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 24px;
+            background-color: var(--accent-orange);
+            margin-right: 12px;
             border-radius: 4px;
         }
 
-        /* Independent Companies Cards */
+        p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        /* Premium Info Sections */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #fafbfc;
+            border: 1px solid #e1e4e8;
+            padding: 30px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .info-box:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            border-color: var(--secondary-blue);
+        }
+
+        /* Document Links Buttons */
+        .action-banner {
+            background: linear-gradient(to right, rgba(13, 43, 94, 0.05), rgba(19, 136, 8, 0.05));
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 40px 0;
+            border: 1px dashed #ccc;
+        }
+
+        .doc-btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 14px 28px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .doc-btn:hover { 
+            background-color: var(--accent-orange); 
+            transform: translateY(-2px);
+        }
+        
+        /* Subsidiaries Grid */
         .subsidiary-container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
 
         .sub-card {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            border-top: 4px solid #138808;
-            width: calc(50% - 35px); /* Ek line mein 2 cards */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            background: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #eee;
+            border-top: 5px solid var(--accent-green);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .sub-card:nth-child(even) { border-top-color: var(--accent-orange); }
+        .sub-card:nth-child(3n) { border-top-color: var(--primary-blue); }
+
+        .sub-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
         }
 
         .sub-card h4 {
-            color: #1a237e;
+            color: var(--primary-blue);
+            font-size: 1.25rem;
             margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-grid { grid-template-columns: 1fr; }
+            .container { padding: 30px 20px; margin-top: -20px; }
+            header h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>EduInfra India</h1>
-        <p>Larsen & Toubro (L&T) - Corporate Details & Subsidiaries</p>
+        <h1>Larsen & Toubro (L&T)</h1>
+        <p>Global Leadership in Engineering, Construction, Manufacturing, and Technology</p>
     </header>
 
     <div class="container">
-        <!-- Main Details Section -->
-        <h2>About Larsen & Toubro (L&T)</h2>
-        <p>Larsen & Toubro (L&T) ek Indian multinational conglomerate hai, jo engineering, construction, manufacturing, aur technology mein global leader hai. Inka focus hamesha high-quality production aur employee safety par rehta hai.</p>
+        
+        <!-- About Section -->
+        <h2>Corporate Overview</h2>
+        <p>Larsen & Toubro (L&T) ek pramukh Indian multinational conglomerate hai, jiski sthapna 1938 mein Henning Holck-Larsen aur Søren Kristian Toubro ne Mumbai mein ki thi. Pichle kai dashkon se, L&T ne Bharat ke basic infrastructure se lekar advanced space programs aur defense manufacturing tak mein apna asadharan yogdan diya hai. Aaj, L&T 50 se adhik deshon mein apni services provide karta hai aur iska naam duniya ki sabse badi aur sabse sammanit engineering construction companies mein shamil hai. Inka core focus innovation, precision engineering, aur sustainable development par aadharit hai.</p>
 
-        <div class="info-box">
-            <h3>Manufacturing & Industrial Operations</h3>
-            <p>L&T ke heavy engineering aur manufacturing plants mein production ko fast aur error-free banane ke liye <strong>method study</strong> aur <strong>motion economy</strong> ke concepts ka kaafi gahrayi se istemal kiya jata hai. Iske alawa, heavy machinery aur engine components ke overhauling ke samay strict industrial safety regulations, jaise ki <strong>Factories Act 1948</strong> ke standards, ko poori tarah lagoo kiya jata hai taaki zero-accident work environment maintain rahe.</p>
+        <!-- Technical & Operational Details (Highly Detailed) -->
+        <h2>Industrial & Manufacturing Excellence</h2>
+        
+        <div class="content-grid">
+            <div class="info-box">
+                <h3>Work Study & Operational Efficiency</h3>
+                <p>L&T ke heavy engineering aur manufacturing plants mein production lines ko optimize karne ke liye advanced industrial engineering techniques ka prayog hota hai. Shop floor par <strong>Method Study</strong> aur <strong>Motion Economy</strong> ke principles ko sakhti se lagoo kiya jata hai taaki materials aur human effort ka wastage kam ho. Complex aur repetitive manufacturing processes (jaise heavy turbine assembly) ke liye engineers <strong>SIMO charts (Simultaneous Motion Cycle Chart)</strong> ka upyog karte hain. Isse workers ke left aur right hand movements ka micro-analysis karke process ko fast aur fatigue-free banaya jata hai. Practical levels of measurement ka upyog karke quality control ko zero-defect (Six Sigma) tak pahunchaya jata hai.</p>
+            </div>
+
+            <div class="info-box">
+                <h3>Heavy Machinery & Maintenance</h3>
+                <p>L&T Construction & Mining Machinery division apne earth-moving equipments (jaise excavators, loaders, aur dumper trucks) ke maintenance aur durability par khaas dhyan deta hai. In heavy vehicles mein <strong>engine overhauling</strong> ek highly precision wala task hota hai. Iske alawa, modern heavy machinery ke <strong>vehicle electrical systems</strong> aur operator cabins ke <strong>climate control components (HVAC)</strong> ko is tarah design aur service kiya jata hai ki extreme weather (jaise mining sites par dhool aur garmi) mein bhi operator ko comfort mile aur machine ki performance par koi asar na pade.</p>
+            </div>
         </div>
 
-        <div class="info-box">
-            <h3>Wage Structure & Employee Welfare</h3>
-            <p>Ek massive workforce ko manage karne ke liye L&T ka wage structure kafi transparent hai. Industry standards ke mutabiq base pay ke sath-sath, company inflation aur market conditions ko dhyan mein rakhte hue <strong>nominal wages</strong> aur actual purchasing power (<strong>real wages</strong>) ke beech ek sahi balance banati hai.</p>
+        <div class="content-grid">
+            <div class="info-box">
+                <h3>Industrial Safety & Compliance</h3>
+                <p>Ek manufacturing aur construction giant hone ke naate, L&T ke liye safety sabse upar hai ("Zero Harm" vision). Inke sabhi plants aur project sites par <strong>Factories Act 1948</strong> ke regulations ka aksharasah (strictly) palan kiya jata hai. Isme working hours limit, proper ventilation, hazardous chemicals handling, machinery fencing, aur workers ki health monitoring shamil hai. Safety audits regularly conduct kiye jate hain aur latest PPE (Personal Protective Equipment) ke bina kisi bhi worker ko heavy engineering zone mein entry nahi milti hai.</p>
+            </div>
+
+            <div class="info-box">
+                <h3>Employee Welfare & Wage Structure</h3>
+                <p>Lakhon employees aur contractual workers ko manage karne ke liye L&T ka Human Resources aur Payroll system kafi strong hai. Wage structure ko transparent banaya gaya hai. Company apne workers ko fair compensation dene ke liye inflation aur Consumer Price Index (CPI) ka dhyan rakhti hai. HR department yeh sunishchit karta hai ki workers ke <strong>nominal wages</strong> (jo actual cash/salary milti hai) aur unke <strong>real wages</strong> (salary ki actual purchasing power market mein) ke beech ek sahi balance bana rahe, taaki samay ke sath employees ka living standard behtar ho sake.</p>
+            </div>
         </div>
 
-        <hr style="margin: 40px 0; border: 1px solid #eee;">
+        <!-- Call to Action Banner -->
+        <div class="action-banner">
+            <h3 style="margin-top:0; justify-content:center;">Corporate Documents & Formats</h3>
+            <p style="text-align:center;">L&T onboarding aur recruitment process mein use hone wale standard official documents yahan se dekhein:</p>
+            <a href="offer-letter.html" class="doc-btn">Download Offer Letter</a>
+            <a href="loi.html" class="doc-btn">View LOI Format</a>
+            <a href="appointment.html" class="doc-btn">Check Appointment Letter</a>
+        </div>
 
-        <!-- Independent Companies Section -->
-        <h2>Independent Companies & Subsidiaries</h2>
-        <p>L&T group ke andar kai independent companies operate karti hain jo alag-alag sectors mein expert hain:</p>
+        <!-- Subsidiaries Section -->
+        <h2>Independent Companies & Key Subsidiaries</h2>
+        <p>L&T ek vast conglomerate hai jiske andar kai independent companies operate karti hain. Har subsidiary apne specific domain mein market leader hai, chahe wo IT sector ho, finance ho, ya heavy construction:</p>
 
         <div class="subsidiary-container">
-            <!-- Card 1 -->
             <div class="sub-card">
                 <h4>L&T Technology Services (LTTS)</h4>
-                <p>Pure-play Engineering Research & Development (ER&D) par focus. Yeh mechanical aur manufacturing engineering ke advanced digitalization solutions provide karti hai.</p>
+                <p>Yeh company purely Engineering Research & Development (ER&D) par kendrit hai. LTTS advanced mechanical engineering, smart manufacturing, aur vehicle electrical systems ke digitalization ke liye duniya bhar ki top Fortune 500 companies ko technical solutions pradan karti hai.</p>
             </div>
 
-            <!-- Card 2 -->
-            <div class="sub-card" style="border-top-color: #ff9933;">
-                <h4>LTIMindtree</h4>
-                <p>L&T Infotech (LTI) aur Mindtree ke milne se bani yeh Bharat ki leading IT services aur digital consulting company hai.</p>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="sub-card" style="border-top-color: #1a237e;">
-                <h4>L&T Finance Holdings</h4>
-                <p>Yeh financial division rural, housing aur infrastructure sectors ke liye specialized loans aur investment services deta hai.</p>
-            </div>
-
-            <!-- Card 4 -->
             <div class="sub-card">
-                <h4>L&T Heavy Engineering</h4>
-                <p>Yeh independent segment global refineries, oil & gas, aur power plants ke liye complex aur critical equipment design aur manufacture karta hai.</p>
+                <h4>LTIMindtree</h4>
+                <p>L&T Infotech (LTI) aur Mindtree ke safal merger ke baad bani yeh company Bharat ki leading IT services aur digital transformation consulting firm hai. Yeh cloud computing, AI, aur enterprise software solutions me maharat rakhti hai.</p>
+            </div>
+
+            <div class="sub-card">
+                <h4>L&T Finance Holdings</h4>
+                <p>Yeh L&T group ki core financial services company hai. Yeh gramin (rural) finance, tractor loans, housing finance, aur bade infrastructure projects ke liye specialized funding aur investment services provide karti hai.</p>
+            </div>
+
+            <div class="sub-card">
+                <h4>L&T Hydrocarbon Engineering</h4>
+                <p>Yeh division global oil & gas sector ke liye kaam karta hai. Offshore platforms, onshore refineries, aur petrochemical plants ki designing, manufacturing, aur construction mein inka global level par bada naam hai.</p>
+            </div>
+
+            <div class="sub-card">
+                <h4>L&T Realty</h4>
+                <p>Real estate sector mein L&T Realty premium residential, commercial, aur retail properties develop karti hai. Unke projects apne high-quality construction standards aur timely delivery ke liye prasiddh hain.</p>
+            </div>
+
+            <div class="sub-card">
+                <h4>L&T Metro Rail (Hyderabad)</h4>
+                <p>Yeh ek independent SPV (Special Purpose Vehicle) hai jo public-private partnership (PPP) model par duniya ke sabse bade metro rail projects mein se ek, Hyderabad Metro ko safaltapoorvak operate karti hai.</p>
             </div>
         </div>
 
